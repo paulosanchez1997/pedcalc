@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Pediátrica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .medicacao {
+            display: none; /* Esconder as medicações inicialmente */
+        }
+        .subtitulo {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Pediátrica</h1>
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso" name="peso">
+    <button onclick="calcularDoses()">Calcular</button>
+    
+    <h2 class="subtitulo" onclick="toggleMedications('Intubacao')">Intubação em Sequência Rápida</h2>
+    <div id="medicacoesIntubacao" class="medicacao">
+        <p>1- <strong>Fentanil</strong>: diluir 2ml em 8ml de AD, administrar <strong><span id="doseFentanil">0</span></strong> ml da solução</p>
+        <p>2- <strong>Midazolam</strong>: diluir 2ml em 8ml de AD, administrar <strong><span id="doseMidazolam">0</span></strong> ml da solução</p>
+        <p>3- <strong>Etomidato</strong>: diluir 2ml em 18ml de AD, administrar <strong><span id="doseEtomidato">0</span></strong> ml da solução</p>
+        <p>4- <strong>Cetamina</strong>: diluir 2ml em 8ml de AD, administrar <strong><span id="doseCetamina">0</span></strong> ml da solução</p>
+        <p>5- <strong>Propofol</strong>: administrar <strong><span id="dosePropofol">0</span></strong> ml</p>
+        <p>6- <strong>Succinilcolina 100mg</strong>: diluir o pó com 10 ml de AD, administrar <strong><span id="doseSucc100">0</span></strong> ml da solução</p>
+        <p>7- <strong>Succinilcolina 500mg</strong>: diluir o pó com 4 ml de AD, desprezar 4ml, resiluir com 9 ml de AD, administrar <strong><span id="doseSucc500">0</span></strong> ml da solução</p>
+        <p>8- <strong>Rocurônio</strong>: administrar <strong><span id="doseRocuronio">0</span></strong> ml</p>
+    </div>
+
+    <h2 class="subtitulo" onclick="toggleMedications('PCR')">PCR</h2>
+    <div id="medicacoesPCR" class="medicacao">
+        <p>1- <strong>Adrenalina</strong>: diluir 1 ml em 9 ml de AD, administrar <strong><span id="doseAdrenalina">0</span></strong> ml da solução</p>
+        <p>2- <strong>Amiodarona</strong>: administrar <strong><span id="doseAmiodarona">0</span></strong> ml</p>
+        <p>3- <strong>Lidocaina (2%) dose de ataque</strong>: administrar <strong><span id="doseLidocainaAtaque">0</span></strong> ml puro</p>
+        <p>4- <strong>Lidocaina (2%) dose de Manutenção</strong>: diluir 10 ml em 40 ml de SG5%, infundir em BIC <strong><span id="doseLidocainaManutencao">0</span></strong> ml/h</p>
+        <p>5- <strong>Atropina (0,5 mg/ml)</strong>: administrar <strong><span id="doseAtropina05">0</span></strong> ml</p>
+        <p>6- <strong>Atropina (0,25 mg/ml)</strong>: administrar <strong><span id="doseAtropina025">0</span></strong> ml</p>
+        <p>7- <strong>Gluconato de Ca (0,5 mEq/ml)</strong>: administrar <strong><span id="doseGluconatoCa">0</span></strong> ml</p>
+        <p>8- <strong>Cloreto de Ca (1,5 mEq/ml)</strong>: administrar <strong><span id="doseCloretoCa">0</span></strong> ml</p>
+        <p>9- <strong>Bicarbonato de Sódio (1 mEq/ml)</strong>: administrar <strong><span id="doseBicarbonato">0</span></strong> ml</p>
+        <p>10- <strong>Glicose 50% (adolescente)</strong>: administrar <strong><span id="doseGlicose50Adolescente">0</span></strong> ml</p>
+        <p>11- <strong>Glicose 25% (Criança)</strong>: administrar <strong><span id="doseGlicose25Crianca">0</span></strong> ml</p>
+        <p>12- <strong>Glicose 50% (Lactente)</strong>: administrar <strong><span id="doseGlicose50Lactente">0</span></strong> ml</p>
+    </div>
+
+    <script>
+        function calcularDoses() {
+            const peso = document.getElementById("peso").value;
+
+            // Cálculos das doses
+            const doseFentanil = peso * 0.4;
+            const doseMidazolam = peso * 0.3;
+            const doseEtomidato = peso * 0.3;
+            const doseCetamina = peso * 0.2;
+            const dosePropofol = peso * 0.4;
+            const doseSucc100 = peso * 0.2;
+            const doseSucc500 = peso * 0.2;
+            const doseRocuronio = peso * 0.12;
+
+            // Doses PCR
+            const doseAdrenalina = peso * 0.1;
+            const doseAmiodarona = peso * 0.1;
+            const doseLidocainaAtaque = peso * 0.05;
+            const doseLidocainaManutencao = peso * 0.3;
+            const doseAtropina05 = peso * 0.04;
+            const doseAtropina025 = peso * 0.08;
+            const doseGluconatoCa = peso * 2;
+            const doseCloretoCa = peso * 0.66;
+            const doseBicarbonato = peso * 1;
+            const doseGlicose50Adolescente = peso * 2;
+            const doseGlicose25Crianca = peso * 4;
+            const doseGlicose50Lactente = peso * 10;
+
+            // Atualizando os elementos HTML
+            document.getElementById("doseFentanil").textContent = doseFentanil.toFixed(2);
+            document.getElementById("doseMidazolam").textContent = doseMidazolam.toFixed(2);
+            document.getElementById("doseEtomidato").textContent = doseEtomidato.toFixed(2);
+            document.getElementById("doseCetamina").textContent = doseCetamina.toFixed(2);
+            document.getElementById("dosePropofol").textContent = dosePropofol.toFixed(2);
+            document.getElementById("doseSucc100").textContent = doseSucc100.toFixed(2);
+            document.getElementById("doseSucc500").textContent = doseSucc500.toFixed(2);
+            document.getElementById("doseRocuronio").textContent = doseRocuronio.toFixed(2);
+            
+            // Atualizando doses PCR
+            document.getElementById("doseAdrenalina").textContent = doseAdrenalina.toFixed(2);
+            document.getElementById("doseAmiodarona").textContent = doseAmiodarona.toFixed(2);
+            document.getElementById("doseLidocainaAtaque").textContent = doseLidocainaAtaque.toFixed(2);
+            document.getElementById("doseLidocainaManutencao").textContent = doseLidocainaManutencao.toFixed(2);
+            document.getElementById("doseAtropina05").textContent = doseAtropina05.toFixed(2);
+            document.getElementById("doseAtropina025").textContent = doseAtropina025.toFixed(2);
+            document.getElementById("doseGluconatoCa").textContent = doseGluconatoCa.toFixed(2);
+            document.getElementById("doseCloretoCa").textContent = doseCloretoCa.toFixed(2);
+            document.getElementById("doseBicarbonato").textContent = doseBicarbonato.toFixed(2);
+            document.getElementById("doseGlicose50Adolescente").textContent = doseGlicose50Adolescente.toFixed(2);
+            document.getElementById("doseGlicose25Crianca").textContent = doseGlicose25Crianca.toFixed(2);
+            document.getElementById("doseGlicose50Lactente").textContent = doseGlicose50Lactente.toFixed(2);
+        }
+
+        function toggleMedications(tipo) {
+            const medicacoes = document.getElementById(`medicacoes${tipo}`);
+            medicacoes.style.display = medicacoes.style.display === 'none' || medicacoes.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
