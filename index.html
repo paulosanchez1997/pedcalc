@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Calculadora Pediátrica</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             color: #4D4D4D;
+            padding: 0px;
+            margin: 0px;
         }
         .medicacao {
             display: none; /* Esconder as medicações inicialmente */
@@ -42,10 +47,6 @@
             padding-right: 1%;
             padding-left: 1%;
         }
-        body{
-            padding: 0px;
-            margin: 0px;
-        }
         p{
             font-size: 1em;
             margin-bottom: 1%;
@@ -54,6 +55,46 @@
             border-width: 0px;
             border-bottom-width: 1px;
             border-color: #949494;
+            text-align: justify;
+        }
+        input{
+            margin-bottom: 1%;
+            width: 50px;
+        }
+        #peso{
+            width:90px;
+        }
+        button{
+            width: 175px;
+        }
+
+        @media (max-width: 768px) {
+          body{
+            font-size: 2em;
+          }
+          input{
+            height: 40px;
+            margin-bottom: 3%;
+            border-radius: 10px;
+            width: 100px;
+          }
+          #peso{
+            width: 100px;
+          }
+          select{
+            height: 45px;
+            width: 20%;
+            font-size: 0.8em;
+          }
+          button{
+            height: 40px;
+            width: 20%;
+            font-size: 0.8em;
+            background-color: #DFEFF9;
+            border-color: white;
+            border-radius: 10px;
+            margin-bottom: 5%;
+          }
         }
     </style>
 </head>
@@ -62,13 +103,13 @@
     <div id="cabecalho">
         <h1>Calculadora Pediátrica</h1>
         <label for="peso">Peso (kg):</label>
-        <input type="number" id="peso" name="peso">
+        <input type="number" id="peso" name="peso"> <br>
         <label for="idade">Idade:</label>
         <input type="number" id="idade" name="idade">
         <select id="unidadeIdade">
             <option value="anos">Anos</option>
             <option value="meses">Meses</option>
-        </select>
+        </select><br>
         <button onclick="calcularDoses()">Calcular</button>
     </div>
 
