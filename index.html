@@ -140,6 +140,7 @@
             <p>8 - <strong>Rocurônio (10 mg/ml)</strong>: administrar <strong><span id="doseRocuronio">0</span></strong> ml (1,2 mg/kg)</p>
             <p>9 - <strong>Usar tubo nº </strong><strong><span id="tamanhoTubo">0</span></strong> mm e inserir até </strong><strong><span id="inserir">0</span></strong> cm</p>
             <p>10 - <strong>Usar lâmina </strong><strong><span id="tamanhoLamina">0</span></strong></p>
+            <p>11 - <strong>Adrenalina Push Dose</strong>: Diluir 1 ml em 19 ml de AD, desprezar 19 ml, diluir o ml restante com 9 ml de AD, administrar <strong><span id="doseAdrenaPushDose">0</span></strong> ml da solução</p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('PCR')">PCR</h2>
@@ -182,6 +183,30 @@
             <p>2 - <strong>Cetamina (50 mg/ml) Contínuo</strong>: Diluir 5 ml em 245 ml de SF 0,9%, infundir em BIC a <strong><span id="doseCetaminaSedaContinuo">0</span> ml/h</strong> (20 mcg/kg/min) </p>
             <p>2 - <strong>Dexmedetomidina (100 mcg/ml) Contínuo</strong>: Diluir 2 ml em 98 ml de SF 0,9%, infundir em BIC a <strong><span id="doseDexmedetomidinaSedaContinuo">0</span> ml/h</strong> (0,5 mcg/kg/h) </p>
         </div>
+
+        <h2 class="subtitulo" onclick="toggleMedications('Anafilaxia')" >Anafilaxia</h2>
+        <div id="medicacoesAnafilaxia" class="medicacao">
+            <p>1 - <strong>Adrenalina</strong>: Administrar <strong><span id="doseAdrenaAnafilaxia">0</span></strong> ml IM vasto lateral (0,01 ml/kg/dose). Pode ser repetida a cada 5-15 minutos</p>
+            <p>2 - <strong>Difinidramina (50 mg/ml em 1 ml) (> 2 anos)</strong>: Administrar <strong><span id="doseDifinidramina">0</span></strong> mg EV diluido de 6/6h ou 4/4h (1 mg/kg/dose) por 3 a 5 dias</p>
+            <p>3 - <strong>Corticoterapia</strong>: Escolha uma das opções a seguir:</p>
+            <p>- <strong>Metilprednisolona</strong>: Administrar <strong><span id="doseMetilprednisolona">0</span></strong> mg EV agora (2 mg/kg - max 60mg), e <strong><span id="doseMetilprednisolonaManut">0</span></strong> mg EV de 6/6h (1 mg/kg) por 3 a 5 dias</p>
+            <p>ou</p>
+            <p>- <strong>Prednisolona</strong>: Administrar <strong><span id="dosePrednisolonaSuspOral">0</span></strong> ml ou <strong><span id="dosePrednisolonaGotas">0</span></strong> gotas VO de 1x ao dia (1mg/kg/dia) </p>
+            <p>4 - Decúbito dorsal com elevação dos membros inferiores.</p>
+            <p>4 - MOVE</p>
+        </div>
+
+        <h2 class="subtitulo" onclick="toggleMedications('DVA')" >Drogas vasoativas</h2>
+        <div id="medicacoesDVA" class="medicacao">
+            <p>Vasopressores:</p>
+            <p>1 - <strong>Noradrenalina</strong>: Diluir 2 ml em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNoradrenalina">0</span></strong> a <strong><span id="doseNoradrenalina2">0</span></strong> ml/h </p>
+            <p>2 - <strong>Adrenalina</strong>: Diluir 1 amp (1 ml) em 99 ml de SG5% (1 mg/ml), infundir ev em BIC de <strong><span id="doseAdrenalinaBIC">0</span></strong> a <strong><span id="doseAdrenalinaBIC2">0</span></strong> ml/h </p>
+            <p>Inotrópicos:</p>
+            <p>1 - <strong>Dobutamina</strong>: Diluir 1 amp (20 ml) em 230 ml de SG5% (1 mg/ml), infundir ev em BIC de <strong><span id="doseDobutamina">0</span></strong> a <strong><span id="doseDobutamina2">0</span></strong> ml/h </p>
+            <p>2 - <strong>Milrinone</strong>: Diluir 1 amp (20 ml) em 180 ml de SG5% (1 mg/ml), infundir ev em BIC de <strong><span id="doseMilrinone">0</span></strong> a <strong><span id="doseMilrinone2">0</span></strong> ml/h </p>
+            <p>Vasodilatadores</p>
+            <p>1 - <strong>Nitroprussiato de sódio</strong>: Diluir 1 amp (2 ml) em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNipride">0</span></strong> a <strong><span id="doseNipride2">0</span></strong> ml/h </p>
+        </div>
     </div>
 
     <script>
@@ -208,6 +233,7 @@
             const doseSucc100 = peso * 0.2;
             const doseSucc500 = peso * 0.2;
             const doseRocuronio = peso * 0.12;
+            const doseAdrenaPushDose = peso * 0.2;
 
             // Cálculo do tamanho do tubo (gerando número múltiplo de 5)
             function arredondarParaMultiploDe05(num) {
@@ -234,11 +260,11 @@
             let tamanhoLamina;
             if (idadeEmAnos < 1){
                 tamanhoLamina = 0;
-            }else if (idade == 1){
+            }else if (idadeEmAnos == 1){
                 tamanhoLamina = 1;
-            }else if (idade >= 2 && idade <= 11){
+            }else if (idadeEmAnos >= 2 && idade <= 11){
                 tamanhoLamina = 2;
-            }else if (idade >= 12){
+            }else if (idadeEmAnos >= 12){
                 tamanhoLamina = 3;
             }
 
@@ -265,6 +291,53 @@
             const doseCetaminaSedaContinuo = peso * 1.2;
             const doseDexmedetomidinaSedaContinuo = peso * 0.25;
 
+            //Doses Anafilaxia
+            const doseAdrenaAnafilaxia = peso * 0.01;
+            let doseDifinidramina;
+            if (peso < 50){
+                doseDifinidramina = peso;
+            }else {
+                doseDifinidramina = 50;
+            }
+            let doseMetilprednisolona;
+            if (peso < 30){
+                doseMetilprednisolona = peso * 2;
+            } else {
+                doseMetilprednisolona = 60;
+            }
+            let doseMetilprednisolonaManut;
+            if (peso < 60){
+                doseMetilprednisolonaManut = peso;
+            } else {
+                doseMetilprednisolonaManut = 60;
+            }
+            const dosePrednisolonaSuspOral = peso * 0.333;
+            const dosePrednisolonaGotas = peso * 0.81;
+
+            //Doses Drogas Vasoativas
+            const doseNoradrenalina = peso * 0.375;
+            const doseNoradrenalina2 = peso * 0.75;
+            const doseAdrenalinaBIC = peso * 0.3;
+            const doseAdrenalinaBIC2 = peso * 1.8;
+            const doseDobutamina = peso * 0.3;
+            const doseDobutamina2 = peso * 1.2;
+            const doseMilrinone = peso * 0.225;
+            const doseMilrinone2 = peso * 4.2;
+            const doseNipride = peso * 0.15;
+            const oseNipride2 = peso * 3;
+
+            // Atualizando os elementos das drogas vasoativas
+            document.getElementById("doseNoradrenalina").textContent = doseNoradrenalina.toFixed(1);
+            document.getElementById("doseNoradrenalina2").textContent = doseNoradrenalina2.toFixed(1);
+            document.getElementById("doseAdrenalinaBIC").textContent = doseAdrenalinaBIC.toFixed(1);
+            document.getElementById("doseAdrenalinaBIC2").textContent = doseAdrenalinaBIC2.toFixed(1);
+            document.getElementById("doseDobutamina").textContent = doseDobutamina.toFixed(1);
+            document.getElementById("doseDobutamina2").textContent = doseDobutamina2.toFixed(1);
+            document.getElementById("doseMilrinone").textContent = doseMilrinone.toFixed(1);
+            document.getElementById("doseMilrinone2").textContent = doseMilrinone2.toFixed(1);
+            document.getElementById("doseNipride").textContent = doseNipride.toFixed(1);
+            document.getElementById("oseNipride2").textContent = oseNipride2.toFixed(1);
+
             // Atualizando os elementos HTML IOT
             document.getElementById("doseFentanil").textContent = doseFentanil.toFixed(1);
             document.getElementById("doseMidazolam").textContent = doseMidazolam.toFixed(1);
@@ -277,6 +350,7 @@
             document.getElementById("tamanhoTubo").textContent = tamanhoTubo.toFixed(1);
             document.getElementById("inserir").textContent = inserir.toFixed(1);
             document.getElementById("tamanhoLamina").textContent = tamanhoLamina;
+            document.getElementById("doseAdrenaPushDose").textContent = doseAdrenaPushDose.toFixed(1);
 
             // Atualizando doses PCR
             document.getElementById("doseAdrenalina").textContent = doseAdrenalina.toFixed(1);
@@ -300,6 +374,17 @@
             document.getElementById("doseCetaminaSedaIntermitente").textContent = doseCetaminaSedaIntermitente.toFixed(1);
             document.getElementById("doseCetaminaSedaContinuo").textContent = doseCetaminaSedaContinuo.toFixed(1);
             document.getElementById("doseDexmedetomidinaSedaContinuo").textContent = doseDexmedetomidinaSedaContinuo.toFixed(1);
+
+            //Atualizando doses Anafilaxia
+            document.getElementById("doseAdrenaAnafilaxia").textContent = doseAdrenaAnafilaxia.toFixed(2);
+            document.getElementById("doseDifinidramina").textContent = doseDifinidramina;
+            document.getElementById("doseMetilprednisolona").textContent = doseMetilprednisolona;
+            document.getElementById("doseMetilprednisolonaManut").textContent = doseMetilprednisolonaManut;
+            document.getElementById("dosePrednisolonaSuspOral").textContent = dosePrednisolonaSuspOral.toFixed(1);
+            document.getElementById("dosePrednisolonaGotas").textContent = dosePrednisolonaGotas.toFixed(1);
+
+            console.log(peso);
+            console.log(doseDifinidramina);
         }
 
         function toggleMedications(tipo) {
