@@ -128,6 +128,13 @@
     </div>
 
     <div id="corpo">
+        <h2 class="subtitulo" onclick="toggleMedications('SinaisVitais')">Sinais vitais</h2>
+        <div id="medicacoesSinaisVitais" class="medicacao">
+            <p>1 - <strong>Frequência cardíaca</strong>: <strong><span id="fc">0</span></strong> a <strong><span id="fc2">0</span></strong> bpm</p>
+            <p>1 - <strong>Frequência respiratória</strong>: <strong><span id="fr">0</span></strong> a <strong><span id="fr2">0</span></strong> bpm</p>
+            <p>1 - <strong>Pressão arterial sistólica</strong>: <strong><span id="pas">0</span></strong> a <strong><span id="pas2">0</span></strong> bpm</p>
+        </div>
+
         <h2 class="subtitulo" onclick="toggleMedications('Intubacao')">Intubação em Sequência Rápida</h2>
         <div id="medicacoesIntubacao" class="medicacao">
             <p>1 - <strong>Fentanil (50 mcg/ml)</strong>: diluir 2 ml em 8 ml de AD (10 mcg/ml), administrar <strong><span id="doseFentanil">0</span></strong> ml da solução (4 mcg/kg)</p>
@@ -170,18 +177,18 @@
             <p>- Adolescente: 1,0</p>
             <p> OBS: Pode iniciar sempre com 0,8 para todos e ajustar depois</p>
             <p>4 - <strong>Frequência respiratória</strong>: neonato (30-40), crianças (20-30), adolescentes (12 - 20) </p>
-            <p>5 - <strong>PEED</strong>: 5 </p>
+            <p>5 - <strong>PEEP</strong>: 5 </p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('Sedacao')">Sedação</h2>
         <div id="medicacoesSedacao" class="medicacao">
-            <p>1 - <strong>Fentanil (50 mcg/ml) Intermitente</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseFentanilSedaIntermitente">0</span> ml</strong> da solução (1 mcg/kg) </p>
-            <p>2 - <strong>Fentanil (50 mcg/ml) Contínuo</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir em BIC a <strong><span id="doseFentanilSedaContinuo">0</span> ml/h</strong> (1 mcg/kg/h) </p>
-            <p>1 - <strong>Midazolam (5 mg/ml) Intermitente</strong>: Administrar <strong><span id="doseMidaSedaIntermitente">0</span> ml</strong> (0,1 mg/kg) </p>
-            <p>2 - <strong>Midazolam (5 mg/ml) Contínuo</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir em BIC a <strong><span id="doseMidaSedaContinuo">0</span> ml/h</strong> (0,1 mg/kg/h) </p>
-            <p>1 - <strong>Cetamina (50 mg/ml) Intermitente</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseCetaminaSedaIntermitente">0</span> ml</strong> (1 mg/kg) </p>
-            <p>2 - <strong>Cetamina (50 mg/ml) Contínuo</strong>: Diluir 5 ml em 245 ml de SF 0,9%, infundir em BIC a <strong><span id="doseCetaminaSedaContinuo">0</span> ml/h</strong> (20 mcg/kg/min) </p>
-            <p>2 - <strong>Dexmedetomidina (100 mcg/ml) Contínuo</strong>: Diluir 2 ml em 98 ml de SF 0,9%, infundir em BIC a <strong><span id="doseDexmedetomidinaSedaContinuo">0</span> ml/h</strong> (0,5 mcg/kg/h) </p>
+            <p>1 - <strong>Fentanil (50 mcg/ml) bolos</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseFentanilSedaIntermitente">0</span> ml</strong> da solução (1 mcg/kg) </p>
+            <p>2 - <strong>Fentanil (50 mcg/ml) BIC</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir em BIC a <strong><span id="doseFentanilSedaContinuo">0</span> ml/h</strong> (1 mcg/kg/h) </p>
+            <p>1 - <strong>Midazolam (5 mg/ml) bolos</strong>: Administrar <strong><span id="doseMidaSedaIntermitente">0</span> ml</strong> (0,1 mg/kg) </p>
+            <p>2 - <strong>Midazolam (5 mg/ml) BIC</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir em BIC a <strong><span id="doseMidaSedaContinuo">0</span> ml/h</strong> (0,1 mg/kg/h) </p>
+            <p>1 - <strong>Cetamina (50 mg/ml) bolos</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseCetaminaSedaIntermitente">0</span> ml</strong> (1 mg/kg) </p>
+            <p>2 - <strong>Cetamina (50 mg/ml) BIC</strong>: Diluir 5 ml em 245 ml de SF 0,9%, infundir em BIC a <strong><span id="doseCetaminaSedaContinuo">0</span> ml/h</strong> (20 mcg/kg/min) </p>
+            <p>2 - <strong>Dexmedetomidina (100 mcg/ml) BIC</strong>: Diluir 2 ml em 98 ml de SF 0,9%, infundir em BIC a <strong><span id="doseDexmedetomidinaSedaContinuo">0</span> ml/h</strong> (0,5 mcg/kg/h) </p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('Anafilaxia')" >Anafilaxia</h2>
@@ -200,10 +207,10 @@
         <div id="medicacoesDVA" class="medicacao">
             <p>Vasopressores:</p>
             <p>1 - <strong>Noradrenalina</strong>: Diluir 2 ml em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNoradrenalina">0</span></strong> a <strong><span id="doseNoradrenalina2">0</span></strong> ml/h </p>
-            <p>2 - <strong>Adrenalina</strong>: Diluir 1 amp (1 ml) em 99 ml de SG5% (1 mg/ml), infundir ev em BIC de <strong><span id="doseAdrenalinaBIC">0</span></strong> a <strong><span id="doseAdrenalinaBIC2">0</span></strong> ml/h </p>
+            <p>2 - <strong>Adrenalina</strong>: Diluir 1 amp (1 ml) em 99 ml de SG5%, infundir ev em BIC de <strong><span id="doseAdrenalinaBIC">0</span></strong> a <strong><span id="doseAdrenalinaBIC2">0</span></strong> ml/h </p>
             <p>Inotrópicos:</p>
-            <p>1 - <strong>Dobutamina</strong>: Diluir 1 amp (20 ml) em 230 ml de SG5% (1 mg/ml), infundir ev em BIC de <strong><span id="doseDobutamina">0</span></strong> a <strong><span id="doseDobutamina2">0</span></strong> ml/h </p>
-            <p>2 - <strong>Milrinone</strong>: Diluir 1 amp (20 ml) em 180 ml de SG5% (1 mg/ml), infundir ev em BIC de <strong><span id="doseMilrinone">0</span></strong> a <strong><span id="doseMilrinone2">0</span></strong> ml/h </p>
+            <p>1 - <strong>Dobutamina</strong>: Diluir 1 amp (20 ml) em 230 ml de SG5%, infundir ev em BIC de <strong><span id="doseDobutamina">0</span></strong> a <strong><span id="doseDobutamina2">0</span></strong> ml/h </p>
+            <p>2 - <strong>Milrinone</strong>: Diluir 1 amp (20 ml) em 180 ml de SG5%, infundir ev em BIC de <strong><span id="doseMilrinone">0</span></strong> a <strong><span id="doseMilrinone2">0</span></strong> ml/h </p>
             <p>Vasodilatadores</p>
             <p>1 - <strong>Nitroprussiato de sódio</strong>: Diluir 1 amp (2 ml) em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNipride">0</span></strong> a <strong><span id="doseNipride2">0</span></strong> ml/h </p>
         </div>
@@ -211,6 +218,7 @@
 
     <script>
         function calcularDoses() {
+            console.log("Função calcularDoses foi chamada.");
             const peso = document.getElementById("peso").value;
             const idade = document.getElementById("idade").value;
             const unidadeIdade = document.getElementById("unidadeIdade").value;
@@ -223,6 +231,75 @@
             } else {
                 idadeEmAnos = idade;
             }
+
+
+            //Calculos dos sinais vitais
+            let fc;
+            let fc2;
+            if (idadeEmAnos < 0.084){
+                fc = 100;
+                fc2 = 205;
+            } else if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){
+                fc = 100;
+                fc2 = 180;
+            } else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){
+                fc = 98;
+                fc2 = 140;
+            }else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){
+                fc = 80;
+                fc2 = 120;
+            }else if (idadeEmAnos >= 6 && idadeEmAnos <= 11){
+                fc = 75;
+                fc2 = 118;
+            }else if (idadeEmAnos >= 12){
+                fc = 60;
+                fc2 = 100;
+            }
+
+            let fr;
+            let fr2;
+            if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){
+                fr = 30;
+                fr2 = 53;
+            } else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){
+                fr = 22;
+                fr2 = 37;
+            }else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){
+                fr = 20;
+                fr2 = 28;
+            }else if (idadeEmAnos >= 6 && idadeEmAnos <= 10){
+                fr = 18;
+                fr2 = 25;
+            }else if (idadeEmAnos >= 11){
+                fr = 12;
+                fr2 = 20;
+            }
+
+            let pas;
+            let pas2;
+            if (idadeEmAnos < 0.084){
+                pas = 67;
+                pas2 = 84;
+            } else if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){
+                pas = 72;
+                pas2 = 104;
+            } else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){
+                pas = 86;
+                pas2 = 106;
+            } else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){
+                pas = 88;
+                pas2 = 112;
+            } else if (idadeEmAnos >= 6 && idadeEmAnos <= 9){
+                pas = 97;
+                pas2 = 115;
+            } else if (idadeEmAnos >= 9 && idadeEmAnos <= 11){
+                pas = 102;
+                pas2 = 120;
+            } else if (idadeEmAnos >= 12){
+                pas = 110;
+                pas2 = 131;
+            }
+
 
             // Cálculos das doses IOT
             const doseFentanil = peso * 0.4;
@@ -336,7 +413,7 @@
             document.getElementById("doseMilrinone").textContent = doseMilrinone.toFixed(1);
             document.getElementById("doseMilrinone2").textContent = doseMilrinone2.toFixed(1);
             document.getElementById("doseNipride").textContent = doseNipride.toFixed(1);
-            document.getElementById("oseNipride2").textContent = oseNipride2.toFixed(1);
+            document.getElementById("doseNipride2").textContent = oseNipride2.toFixed(1);
 
             // Atualizando os elementos HTML IOT
             document.getElementById("doseFentanil").textContent = doseFentanil.toFixed(1);
@@ -383,8 +460,16 @@
             document.getElementById("dosePrednisolonaSuspOral").textContent = dosePrednisolonaSuspOral.toFixed(1);
             document.getElementById("dosePrednisolonaGotas").textContent = dosePrednisolonaGotas.toFixed(1);
 
-            console.log(peso);
-            console.log(doseDifinidramina);
+
+             // Atualizando os elementos dos sinais vitais
+            document.getElementById("fc").textContent = fc;
+            document.getElementById("fc2").textContent = fc2;
+            document.getElementById("fr").textContent = fr;
+            document.getElementById("fr2").textContent = fr2;
+            document.getElementById("pas").textContent = pas;
+            document.getElementById("pas2").textContent = pas2;
+
+
         }
 
         function toggleMedications(tipo) {
