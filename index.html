@@ -130,28 +130,40 @@
     <div id="corpo">
         <h2 class="subtitulo" onclick="toggleMedications('SinaisVitais')">Sinais vitais</h2>
         <div id="medicacoesSinaisVitais" class="medicacao">
-            <p>1 - <strong>Frequência cardíaca</strong>: <strong><span id="fc">0</span></strong> a <strong><span id="fc2">0</span></strong> bpm</p>
-            <p>1 - <strong>Frequência respiratória</strong>: <strong><span id="fr">0</span></strong> a <strong><span id="fr2">0</span></strong> bpm</p>
-            <p>1 - <strong>Pressão arterial sistólica</strong>: <strong><span id="pas">0</span></strong> a <strong><span id="pas2">0</span></strong> bpm</p>
+            <p><strong>Frequência cardíaca</strong>: <strong><span id="fc">0</span></strong> a <strong><span id="fc2">0</span></strong> bpm</p>
+            <p><strong>Frequência respiratória</strong>: <strong><span id="fr">0</span></strong> a <strong><span id="fr2">0</span></strong> irpm</p>
+            <p><strong>Pressão arterial sistólica</strong>: <strong><span id="pas">0</span></strong> a <strong><span id="pas2">0</span></strong> mmHg</p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('Intubacao')">Intubação em Sequência Rápida</h2>
         <div id="medicacoesIntubacao" class="medicacao">
+            <p>Pré-tratamento:</p>
             <p>1 - <strong>Fentanil (50 mcg/ml)</strong>: diluir 2 ml em 8 ml de AD (10 mcg/ml), administrar <strong><span id="doseFentanil">0</span></strong> ml da solução (4 mcg/kg)</p>
-            <p>2 - <strong>Midazolam (5 mg/ml)</strong>: diluir 2 ml em 8 ml de AD (1 mg/ml), administrar <strong><span id="doseMidazolam">0</span></strong> ml da solução (0,3 mg/kg)</p>
-            <p>3 - <strong>Etomidato (10 mg/ml)</strong>: diluir 2 ml em 18 ml de AD (1 mg/ml), administrar <strong><span id="doseEtomidato">0</span></strong> ml da solução (0,3 mg/kg)</p>
-            <p>4 - <strong>Cetamina (50 mg/ml)</strong>: diluir 2 ml em 8 ml de AD (10 mg/ml), administrar <strong><span id="doseCetamina">0</span></strong> ml da solução (2 mg/kg)</p>
-            <p>5 - <strong>Propofol 1% (10 mg/ml)</strong>: administrar <strong><span id="dosePropofol">0</span></strong> ml (4 mg/kg)</p>
-            <p>6 - <strong>Succinilcolina 100mg</strong>: diluir o pó com 10 ml de AD (10 mg/ml), administrar <strong><span id="doseSucc100">0</span></strong> ml da solução (2 mg/kg)</p>
-            <p>7 - <strong>Succinilcolina 500mg</strong>: diluir o pó com 4 ml de AD (100 mg/ml), puxar 1ml, diluir com 9 ml de AD (10 mg/ml), administrar <strong><span id="doseSucc500">0</span></strong> ml da solução (2 mg/kg)</p>
-            <p>8 - <strong>Rocurônio (10 mg/ml)</strong>: administrar <strong><span id="doseRocuronio">0</span></strong> ml (1,2 mg/kg)</p>
-            <p>9 - <strong>Usar tubo nº </strong><strong><span id="tamanhoTubo">0</span></strong> mm e inserir até </strong><strong><span id="inserir">0</span></strong> cm</p>
-            <p>10 - <strong>Usar lâmina </strong><strong><span id="tamanhoLamina">0</span></strong></p>
-            <p>11 - <strong>Adrenalina Push Dose</strong>: Diluir 1 ml em 19 ml de AD, desprezar 19 ml, diluir o ml restante com 9 ml de AD, administrar <strong><span id="doseAdrenaPushDose">0</span></strong> ml da solução</p>
+            <p>2 - <strong>Adrenalina Push Dose</strong>: Diluir 1 ml em 19 ml de AD, desprezar 19 ml, diluir o ml restante com 9 ml de AD, administrar <strong><span id="doseAdrenaPushDose">0</span></strong> ml da solução</p><br>
+            <p>Hipnótico:</p>
+            <p>1 - <strong>Midazolam (5 mg/ml)</strong>: diluir 2 ml em 8 ml de AD (1 mg/ml), administrar <strong><span id="doseMidazolam">0</span></strong> ml da solução (0,3 mg/kg)</p>
+            <p>2 - <strong>Etomidato (10 mg/ml)</strong>: diluir 2 ml em 18 ml de AD (1 mg/ml), administrar <strong><span id="doseEtomidato">0</span></strong> ml da solução (0,3 mg/kg)</p>
+            <p>3 - <strong>Cetamina (50 mg/ml)</strong>: diluir 2 ml em 8 ml de AD (10 mg/ml), administrar <strong><span id="doseCetamina">0</span></strong> ml da solução (2 mg/kg)</p>
+            <p>4 - <strong>Propofol 1% (10 mg/ml)</strong>: administrar <strong><span id="dosePropofol">0</span></strong> ml (4 mg/kg)</p><br>
+            <p>Bloqueador neuromuscular:</p>
+            <p>1 - <strong>Succinilcolina 100mg</strong>: diluir o pó com 10 ml de AD (10 mg/ml), administrar <strong><span id="doseSucc100">0</span></strong> ml da solução (2 mg/kg)</p>
+            <p>2 - <strong>Succinilcolina 500mg</strong>: diluir o pó com 4 ml de AD (100 mg/ml), puxar 1ml, diluir com 9 ml de AD (10 mg/ml), administrar <strong><span id="doseSucc500">0</span></strong> ml da solução (2 mg/kg)</p>
+            <p>3 - <strong>Rocurônio (10 mg/ml)</strong>: administrar <strong><span id="doseRocuronio">0</span></strong> ml (1,2 mg/kg)</p>
+            <br>
+            <p><strong>Usar tubo nº </strong><strong><span id="tamanhoTubo">0</span></strong> mm e inserir até </strong><strong><span id="inserir">0</span></strong> cm</p>
+            <p><strong>Usar lâmina </strong><strong><span id="tamanhoLamina">0</span></strong></p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('PCR')">PCR</h2>
         <div id="medicacoesPCR" class="medicacao">
+            <p>Choque:</p>
+            <p>1º Choque: <strong><span id="choque1">0</span></strong> J</p>
+            <p>2º Choque: <strong><span id="choque2">0</span></strong> J</p>
+            <p>3º Choque: <strong><span id="choque3">0</span></strong> J</p>
+            <p>4º Choque: <strong><span id="choque4">0</span></strong> J</p>
+            <p>5º Choque: <strong><span id="choque5">0</span></strong> J</p>
+            <br>
+            <p>Medicações:</p>
             <p>1 - <strong>Adrenalina</strong>: diluir 1 ml em 9 ml de AD, administrar <strong><span id="doseAdrenalina">0</span></strong> ml da solução</p>
             <p>2 - <strong>Amiodarona</strong>: administrar <strong><span id="doseAmiodarona">0</span></strong> ml</p>
             <p>3 - <strong>Lidocaina (2%) dose de ataque</strong>: administrar <strong><span id="doseLidocainaAtaque">0</span></strong> ml puro</p>
@@ -182,38 +194,94 @@
 
         <h2 class="subtitulo" onclick="toggleMedications('Sedacao')">Sedação</h2>
         <div id="medicacoesSedacao" class="medicacao">
-            <p>1 - <strong>Fentanil (50 mcg/ml) bolos</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseFentanilSedaIntermitente">0</span> ml</strong> da solução (1 mcg/kg) </p>
-            <p>2 - <strong>Fentanil (50 mcg/ml) BIC</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir em BIC a <strong><span id="doseFentanilSedaContinuo">0</span> ml/h</strong> (1 mcg/kg/h) </p>
-            <p>1 - <strong>Midazolam (5 mg/ml) bolos</strong>: Administrar <strong><span id="doseMidaSedaIntermitente">0</span> ml</strong> (0,1 mg/kg) </p>
-            <p>2 - <strong>Midazolam (5 mg/ml) BIC</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir em BIC a <strong><span id="doseMidaSedaContinuo">0</span> ml/h</strong> (0,1 mg/kg/h) </p>
-            <p>1 - <strong>Cetamina (50 mg/ml) bolos</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseCetaminaSedaIntermitente">0</span> ml</strong> (1 mg/kg) </p>
-            <p>2 - <strong>Cetamina (50 mg/ml) BIC</strong>: Diluir 5 ml em 245 ml de SF 0,9%, infundir em BIC a <strong><span id="doseCetaminaSedaContinuo">0</span> ml/h</strong> (20 mcg/kg/min) </p>
-            <p>2 - <strong>Dexmedetomidina (100 mcg/ml) BIC</strong>: Diluir 2 ml em 98 ml de SF 0,9%, infundir em BIC a <strong><span id="doseDexmedetomidinaSedaContinuo">0</span> ml/h</strong> (0,5 mcg/kg/h) </p>
+            <p>Sedação para procedimentos:</p>
+            <p>1 - <strong>Fentanil (50 mcg/ml)</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseFentanilSedaIntermitente">0</span></strong> ml da solução EV ou Intranasal (1 mcg/kg) </p>
+            <p>2 - <strong>Midazolam (5 mg/ml)</strong>: Administrar <strong><span id="doseMidaSedaIntermitente">0</span></strong> ml EV ou IM (0,1 mg/kg) </p>
+            <p>3 - <strong>Cetamina (50 mg/ml)</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseCetaminaSedaIntermitente">0</span></strong> ml (1 mg/kg) </p>
+            <p>OBS: Manter monitorização + catéter nasal + jejum de 4 horas de preferência</p>
+            <br>
+            <p>Sedação contínua (Fentanil + hipnótico)</p>
+            <p>1 - <strong>Fentanil (50 mcg/ml)</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseFentanilSedaContinuo">0</span></strong> ml/h (1 mcg/kg/h) </p>
+            <p>2 - <strong>Midazolam (5 mg/ml)</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseMidaSedaContinuo">0</span></strong> ml/h (0,1 mg/kg/h) </p>
+            <p>3 - <strong>Cetamina (50 mg/ml)</strong>: Diluir 5 ml em 245 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseCetaminaSedaContinuo">0</span></strong> ml/h (20 mcg/kg/min) </p>
+            <p>4 - <strong>Dexmedetomidina (100 mcg/ml)</strong>: Diluir 2 ml em 98 ml de SF 0,9%, infundir em BIC a <strong><span id="doseDexmedetomidinaSedaContinuo">0</span></strong> ml/h (0,5 mcg/kg/h) </p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('Anafilaxia')" >Anafilaxia</h2>
         <div id="medicacoesAnafilaxia" class="medicacao">
+            <p>Adrenalina:</p>
             <p>1 - <strong>Adrenalina</strong>: Administrar <strong><span id="doseAdrenaAnafilaxia">0</span></strong> ml IM vasto lateral (0,01 ml/kg/dose). Pode ser repetida a cada 5-15 minutos</p>
-            <p>2 - <strong>Difinidramina (50 mg/ml em 1 ml) (> 2 anos)</strong>: Administrar <strong><span id="doseDifinidramina">0</span></strong> mg EV diluido de 6/6h ou 4/4h (1 mg/kg/dose) por 3 a 5 dias</p>
-            <p>3 - <strong>Corticoterapia</strong>: Escolha uma das opções a seguir:</p>
-            <p>- <strong>Metilprednisolona</strong>: Administrar <strong><span id="doseMetilprednisolona">0</span></strong> mg EV agora (2 mg/kg - max 60mg), e <strong><span id="doseMetilprednisolonaManut">0</span></strong> mg EV de 6/6h (1 mg/kg) por 3 a 5 dias</p>
+            <br>
+            <p>Anti-histamínico:</p>
+            <p>1 - <strong>Difinidramina (50 mg/ml em 1 ml) (> 2 anos)</strong>: Administrar <strong><span id="doseDifinidramina">0</span></strong> mg EV diluido de 6/6h ou 4/4h (1 mg/kg/dose) por 3 a 5 dias (dose máx: 50 mg/dose)</p><br>
+            <p>Corticoterapia: Escolha uma das opções a seguir:</p>
+            <p>1 - <strong>Metilprednisolona</strong>: Administrar <strong><span id="doseMetilprednisolona">0</span></strong> mg EV agora (2 mg/kg - max 60mg/dose), e <strong><span id="doseMetilprednisolonaManut">0</span></strong> mg EV de 6/6h (1 mg/kg) por 3 a 5 dias</p>
             <p>ou</p>
-            <p>- <strong>Prednisolona</strong>: Administrar <strong><span id="dosePrednisolonaSuspOral">0</span></strong> ml ou <strong><span id="dosePrednisolonaGotas">0</span></strong> gotas VO de 1x ao dia (1mg/kg/dia) </p>
-            <p>4 - Decúbito dorsal com elevação dos membros inferiores.</p>
-            <p>4 - MOVE</p>
+            <p>2 - <strong>Prednisolona</strong>: Administrar <strong><span id="dosePrednisolonaSuspOral">0</span></strong> ml ou <strong><span id="dosePrednisolonaGotas">0</span></strong> gotas VO de 1x ao dia por 3 a 5 dias (1mg/kg/dia / dose máx: 60mg/dia)</p><br>
+            <p>Orientações:</p>
+            <p>1 - Decúbito dorsal com elevação dos membros inferiores.</p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('DVA')" >Drogas vasoativas</h2>
         <div id="medicacoesDVA" class="medicacao">
             <p>Vasopressores:</p>
-            <p>1 - <strong>Noradrenalina</strong>: Diluir 2 ml em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNoradrenalina">0</span></strong> a <strong><span id="doseNoradrenalina2">0</span></strong> ml/h </p>
-            <p>2 - <strong>Adrenalina</strong>: Diluir 1 amp (1 ml) em 99 ml de SG5%, infundir ev em BIC de <strong><span id="doseAdrenalinaBIC">0</span></strong> a <strong><span id="doseAdrenalinaBIC2">0</span></strong> ml/h </p>
+            <p>1 - <strong>Noradrenalina</strong>: Diluir 2 ml em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNoradrenalina">0</span></strong> a <strong><span id="doseNoradrenalina2">0</span></strong> ml/h (0,05-0,1 microgramas/kg/minuto)</p>
+            <p>2 - <strong>Adrenalina</strong>: Diluir 1 amp (1 ml) em 99 ml de SG5%, infundir ev em BIC de <strong><span id="doseAdrenalinaBIC">0</span></strong> a <strong><span id="doseAdrenalinaBIC2">0</span></strong> ml/h (0,05-0,3 micrograma/kg/minuto)</p>
+            <br>
             <p>Inotrópicos:</p>
-            <p>1 - <strong>Dobutamina</strong>: Diluir 1 amp (20 ml) em 230 ml de SG5%, infundir ev em BIC de <strong><span id="doseDobutamina">0</span></strong> a <strong><span id="doseDobutamina2">0</span></strong> ml/h </p>
-            <p>2 - <strong>Milrinone</strong>: Diluir 1 amp (20 ml) em 180 ml de SG5%, infundir ev em BIC de <strong><span id="doseMilrinone">0</span></strong> a <strong><span id="doseMilrinone2">0</span></strong> ml/h </p>
+            <p>1 - <strong>Dobutamina</strong>: Diluir 1 amp (20 ml) em 230 ml de SG5%, infundir ev em BIC de <strong><span id="doseDobutamina">0</span></strong> a <strong><span id="doseDobutamina2">0</span></strong> ml/h (5-20 microgramas/kg/minuto)</p>
+            <p>2 - <strong>Milrinone</strong>: Diluir 2 amp (20 ml) em 180 ml de SG5%, infundir ev em BIC de <strong><span id="doseMilrinone">0</span></strong> a <strong><span id="doseMilrinone2">0</span></strong> ml/h (0,375-0,7 micrograma/kg/minuto)</p>
+            <br>
             <p>Vasodilatadores</p>
-            <p>1 - <strong>Nitroprussiato de sódio</strong>: Diluir 1 amp (2 ml) em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNipride">0</span></strong> a <strong><span id="doseNipride2">0</span></strong> ml/h </p>
+            <p>1 - <strong>Nitroprussiato de sódio</strong>: Diluir 1 amp (2 ml) em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNipride">0</span></strong> a <strong><span id="doseNipride2">0</span></strong> ml/h (0,5-10 microgramas/kg/minuto)</p>
         </div>
+
+        <h2 class="subtitulo" onclick="toggleMedications('ASMA')" >Asma exacerbada</h2>
+        <div id="medicacoesASMA" class="medicacao">
+            <p>Broncodilatador:</p>
+            <p>1 - <strong>Salbutamol Spray 100 mcg/jato</strong>: <strong><span id="doseSalbutamolSpray">0</span></strong> jatos a cada 20 minutos por 1 hora (dose máxima: 10 jatos) (1 ciclo) </p>
+            <p>2 - <strong>Salbutamol solução para nebulização (0,25 mg/gota)</strong>: dar <strong><span id="doseSalbutamolSolucao">0</span></strong> gotas (0,1 mg/kg) a cada 20 minutos por 1 hora (dose máxima: 20 gotas) (1 ciclo = 3 doses = 1h) </p>
+            <p>3 - <strong>Terbutalina (0,5 mg/ml)</strong>: Diluir <strong><span id="doseTerbutalina">0</span></strong> ml em <strong><span id="solventeTerbutalina">0</span></strong> ml de SF 0,9%, correr EV em 5 min (dose: 5 mcg/kg / dose máxima: 10 mcg/kg)</p>
+            <br>
+            <p>Anticolinérgico:</p>
+            <p>1 - <strong>Brometo de ipatrópio</strong>: <strong><span id="doseBrometoIpatropio">0</span></strong> gotas a cada 20 minutos por até 3x (1 ciclo) </p>
+            <br>
+            <p>Corticoterapia:</p>
+            <p>1 - <strong>Hidrocortisona 100mg ou 500mg</strong>: Aplicar <strong><span id="doseHidrocortisona">0</span></strong> mg IM de 6/6h (5 mg/kg), ou diluir em <strong><span id="solventeHidrocortisona">0</span></strong> ml de SF 0,9% (2 mg/ml), correr EV em 30 min de 6/6h por 3 a 5 dias (máximo 250 mg/dose)</p>
+            <p>2 - <strong>Prednisolona</strong>: Administrar <strong><span id="dosePrednisolonaSuspOral2">0</span></strong> ml ou <strong><span id="dosePrednisolonaGotas2">0</span></strong> gotas VO de 1x ao dia por 3 a 5 dias (1mg/kg/dia / dose máx: 60mg/dia)</p>
+            <p>3 - <strong>Dexametasona (2 mg/ml)</strong>: administrar <strong><span id="doseDexametasona2">0</span></strong> ml IM dose única (0,6 mg/kg / dose máx: 10mg)</p>
+            <p>3 - <strong>Dexametasona (4 mg/ml)</strong>: administrar <strong><span id="doseDexametasona4">0</span></strong> ml IM dose única (0,6 mg/kg / dose máx: 10mg)</p>
+            <br>
+            <p>Sulfato de Magnésio (50 mg/kg)</p>
+            <p>1 - <strong>Sulfato de Mg 50% (500 mg/ml)</strong>: administrar <strong><span id="doseSulfatoMg50">0</span></strong> ml diluido em 50 ml de SF 0,9% em 30 min (50 mg/kg / dose máx: 2g)</p>
+            <p>2 - <strong>Sulfato de Mg 10% (100 mg/ml)</strong>: administrar <strong><span id="doseSulfatoMg10">0</span></strong> ml diluido em 50 ml de SF 0,9% em 30 min (50 mg/kg / dose máx: 2g)</p>
+        </div>
+
+        <h2 class="subtitulo" onclick="toggleMedications('Taquiarritmias')" >Taquiarritmias</h2>
+        <div id="medicacoesTaquiarritmias" class="medicacao">
+            <p>Taquicardia supraventricular estável (QRS estreito):</p>
+            <p>1 - Manobra de valsalva modificada</p>
+            <p>2 - <strong>Adenosina (3 mg/ml em 2 ml)</strong>: Administrar <strong><span id="doseAdenosina">0</span></strong> ml EV com torneira 3 vias seguido de 10 ml de SF 0,9%, se não melhorar, administrar <strong><span id="doseAdenosina2">0</span></strong> ml</p>
+            <br>
+            <p>Taquicardia ventricular estável (QRS largo):</p>
+            <p>1 - <strong>Amiodarona (50 mg/ml em 3 ml) dose de ataque</strong>: Diluir <strong><span id="doseAmiodaronaAtaque">0</span></strong> ml em <strong><span id="diluenteAmiodaronaAtaque">0</span></strong> ml de SG5%, correr EV em 60 minutos (pode fazer mais duas vezes caso não funcione)</p>
+            <p>2 - <strong>Amiodarona (50 mg/ml em 3 ml) dose de manutenção</strong>: Diluir <strong><span id="doseAmiodaronaManutencao">0</span></strong> ml em <strong><span id="diluenteAmiodaronaManutencao">0</span></strong> ml de SG5%, correr EV em BIC a <strong><span id="vazaoAmiodaronaManutencao"></span></strong> ml/h</p><br>
+            <p>Taquiarritmia instável (supra ou ventricular)</p>
+            <p>1 - Orientar + sedação + catéter nasal + sincronizar</p>
+            <p>2 - <strong>Cardioversão elétrica sincronizada</strong>: Aplicar <strong><span id="doseCardioversao">0</span></strong> a <strong><span id="doseCardioversao2">0</span></strong> J</p>
+            <p>OBS: Sempre clicar em sincronizar antes de aplicar o choque, tanto para o primeiro, quanto para os subsequentes</p>
+        </div>
+
+        <h2 class="subtitulo" onclick="toggleMedications('Bradiarritmias')" >Bradiarritmias</h2>
+        <div id="medicacoesBradiarritmias" class="medicacao">
+            <p>1 - Ventilação de resgate com AMBU (1 ventilação para cada 2 - 3 segundos) por 1 minuto</p>
+            <p>2 - <strong>Adrenalina</strong>: diluir 1 ml em 9 ml de AD, administrar <strong><span id="doseAdrenalinaBradi">0</span></strong> ml da solução EV</p>
+            <p>3 - <strong>Adrenalina contínuo</strong>: Diluir 1 amp (1 ml) em 99 ml de SG5%, infundir EV em BIC de <strong><span id="doseAdrenalinaBICBradi">0</span></strong> a <strong><span id="doseAdrenalinaBIC2Bradi">0</span></strong> ml/h (0,1-0,3 microgramas/kg/minuto)</p>
+            <p>4 - <strong>Atropina (0,25 mg/ml)</strong>: Adiministrar <strong><span id="doseAtropina025Bradi">0</span></strong> ml EV, pode repetir mais 2 vezes (0,02 mg/kg / dose máx: 0,5 mg crianças, 1 mg adolescentes)</p>
+            <p>5 - <strong>Atropina (0,5 mg/ml)</strong>: Adiministrar <strong><span id="doseAtropina05Bradi">0</span></strong> ml EV, pode repetir mais 2 vezes (0,02 mg/kg / dose máx: 0,5 mg crianças, 1 mg adolescentes)</p>
+        </div>
+        <br><br><br>
+
     </div>
 
     <script>
@@ -284,19 +352,19 @@
                 pas = 72;
                 pas2 = 104;
             } else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){
-                pas = 86;
+                pas = 70 + (idadeEmAnos * 2);
                 pas2 = 106;
             } else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){
-                pas = 88;
+                pas = 70 + (idadeEmAnos * 2);
                 pas2 = 112;
             } else if (idadeEmAnos >= 6 && idadeEmAnos <= 9){
-                pas = 97;
+                pas = 70 + (idadeEmAnos * 2);
                 pas2 = 115;
-            } else if (idadeEmAnos >= 9 && idadeEmAnos <= 11){
-                pas = 102;
+            } else if (idadeEmAnos >= 10 && idadeEmAnos <= 11){
+                pas = 90;
                 pas2 = 120;
             } else if (idadeEmAnos >= 12){
-                pas = 110;
+                pas = 90;
                 pas2 = 131;
             }
 
@@ -346,18 +414,35 @@
             }
 
             // Doses PCR
+            const choque1 = peso * 2;
+            const choque2 = peso * 4;
+            const choque3 = peso * 6;
+            const choque4 = peso * 8;
+            const choque5 = peso * 10;
+
             const doseAdrenalina = peso * 0.1;
             const doseAmiodarona = peso * 0.1;
             const doseLidocainaAtaque = peso * 0.05;
             const doseLidocainaManutencao = peso * 0.3;
-            const doseAtropina05 = peso * 0.04;
-            const doseAtropina025 = peso * 0.08;
             const doseGluconatoCa = peso * 2;
             const doseCloretoCa = peso * 0.66;
             const doseBicarbonato = peso * 1;
             const doseGlicose50Adolescente = peso * 2;
             const doseGlicose25Crianca = peso * 4;
             const doseGlicose10Lactente = peso * 10;
+
+            let doseAtropina05 = peso * 0.04;
+            if (idadeEmAnos < 12 && doseAtropina05 > 1){ //dose máxima 
+                doseAtropina05 = 1;
+            }else if (idadeEmAnos >= 12 && doseAtropina05 > 2){
+                doseAtropina05 = 2;
+            }
+            let doseAtropina025 = peso * 0.08;
+            if (idadeEmAnos < 12 && doseAtropina05 > 2){ //dose máxima
+                doseAtropina05 = 2;
+            }else if (idadeEmAnos >= 12 && doseAtropina05 > 4){
+                doseAtropina05 = 4;
+            }
 
             // Doses Sedação
             const doseFentanilSedaIntermitente = peso * 0.1;
@@ -388,8 +473,16 @@
             } else {
                 doseMetilprednisolonaManut = 60;
             }
-            const dosePrednisolonaSuspOral = peso * 0.333;
-            const dosePrednisolonaGotas = peso * 0.81;
+            let dosePrednisolonaSuspOral;
+            if (idadeEmAnos < 60){
+                dosePrednisolonaSuspOral = peso * 0.333;
+            }else {
+                dosePrednisolonaSuspOral = 20;
+            }
+            let dosePrednisolonaGotas = peso * 1.81;
+            if (dosePrednisolonaGotas > 110){
+                dosePrednisolonaGotas = 110
+            }
 
             //Doses Drogas Vasoativas
             const doseNoradrenalina = peso * 0.375;
@@ -399,9 +492,75 @@
             const doseDobutamina = peso * 0.3;
             const doseDobutamina2 = peso * 1.2;
             const doseMilrinone = peso * 0.225;
-            const doseMilrinone2 = peso * 4.2;
+            const doseMilrinone2 = peso * 0.42;
             const doseNipride = peso * 0.15;
-            const oseNipride2 = peso * 3;
+            const doseNipride2 = peso * 3;
+
+            //Doses da asma exacerbada
+            let doseHidrocortisona = peso * 5;
+            if (doseHidrocortisona > 250){
+                doseHidrocortisona = 250;
+            }
+            let solventeHidrocortisona = doseHidrocortisona / 2;
+
+            let doseBrometoIpatropio;
+            let doseSalbutamolSpray;
+            if (idadeEmAnos < 6){
+                doseBrometoIpatropio = "8 - 20";
+                doseSalbutamolSpray = "2 - 6";
+            }else if (idadeEmAnos >= 6 && idadeEmAnos < 12){
+                doseBrometoIpatropio = 20;
+                doseSalbutamolSpray = '4 - 10';
+            }else{
+                doseBrometoIpatropio = 40;
+                doseSalbutamolSpray = '4 - 10';
+            }
+            let doseSalbutamolSolucao = peso * 0.4;
+            if (doseSalbutamolSolucao > 20){
+                doseSalbutamolSolucao = 20;
+            }
+
+            let doseDexametasona2 = peso * 0.3;
+            if (doseDexametasona2 > 5){
+                doseDexametasona2 = 5;
+            }
+            let doseDexametasona4 = peso * 0.15;
+            if (doseDexametasona4 > 2.5){
+                doseDexametasona4 = 2.5;
+            }
+            const doseTerbutalina = peso * 0.01;
+            const solventeTerbutalina = (5*peso)/5;
+
+            let doseSulfatoMg50 = peso * 0.1;
+            if (doseSulfatoMg50 > 4){ //dose máx
+                doseSulfatoMg50 = 4;
+            }
+            let doseSulfatoMg10 = peso * 0.5;
+            if (doseSulfatoMg10 > 20){ //dose máx
+                doseSulfatoMg10 = 20;
+            }
+
+
+            //Doses Taquiarritmias
+            let doseAdenosina = peso * 0.03;
+            if (doseAdenosina > 2){
+                doseAdenosina = 2;
+            }
+            let doseAdenosina2 = peso * 0.066;
+            if (doseAdenosina2 > 4){
+                doseAdenosina2 = 4;
+            }
+            let doseAmiodaronaAtaque = peso* 0.1;
+            if (doseAmiodaronaAtaque > 6){
+                doseAmiodaronaAtaque = 6;
+            }
+            const diluenteAmiodaronaAtaque = (peso * 5) / 6;
+            const doseAmiodaronaManutencao = peso * 0.3;
+            const diluenteAmiodaronaManutencao = (peso * 15) / 6;
+            const vazaoAmiodaronaManutencao = (doseAmiodaronaManutencao + diluenteAmiodaronaManutencao)/24;
+            const doseCardioversao = peso * 0.5;
+            const doseCardioversao2 = peso * 2;
+
 
             // Atualizando os elementos das drogas vasoativas
             document.getElementById("doseNoradrenalina").textContent = doseNoradrenalina.toFixed(1);
@@ -413,7 +572,7 @@
             document.getElementById("doseMilrinone").textContent = doseMilrinone.toFixed(1);
             document.getElementById("doseMilrinone2").textContent = doseMilrinone2.toFixed(1);
             document.getElementById("doseNipride").textContent = doseNipride.toFixed(1);
-            document.getElementById("doseNipride2").textContent = oseNipride2.toFixed(1);
+            document.getElementById("doseNipride2").textContent = doseNipride2.toFixed(1);
 
             // Atualizando os elementos HTML IOT
             document.getElementById("doseFentanil").textContent = doseFentanil.toFixed(1);
@@ -430,6 +589,12 @@
             document.getElementById("doseAdrenaPushDose").textContent = doseAdrenaPushDose.toFixed(1);
 
             // Atualizando doses PCR
+            document.getElementById("choque1").textContent = choque1;
+            document.getElementById("choque2").textContent = choque2;
+            document.getElementById("choque3").textContent = choque3;
+            document.getElementById("choque4").textContent = choque4;
+            document.getElementById("choque5").textContent = choque5;
+
             document.getElementById("doseAdrenalina").textContent = doseAdrenalina.toFixed(1);
             document.getElementById("doseAmiodarona").textContent = doseAmiodarona.toFixed(1);
             document.getElementById("doseLidocainaAtaque").textContent = doseLidocainaAtaque.toFixed(1);
@@ -458,7 +623,7 @@
             document.getElementById("doseMetilprednisolona").textContent = doseMetilprednisolona;
             document.getElementById("doseMetilprednisolonaManut").textContent = doseMetilprednisolonaManut;
             document.getElementById("dosePrednisolonaSuspOral").textContent = dosePrednisolonaSuspOral.toFixed(1);
-            document.getElementById("dosePrednisolonaGotas").textContent = dosePrednisolonaGotas.toFixed(1);
+            document.getElementById("dosePrednisolonaGotas").textContent = Math.floor(dosePrednisolonaGotas);
 
 
              // Atualizando os elementos dos sinais vitais
@@ -469,6 +634,38 @@
             document.getElementById("pas").textContent = pas;
             document.getElementById("pas2").textContent = pas2;
 
+            //Atualizando os elementos da asma exacerbada
+            document.getElementById("doseBrometoIpatropio").textContent = doseBrometoIpatropio;
+            document.getElementById("doseHidrocortisona").textContent = doseHidrocortisona;
+            document.getElementById("solventeHidrocortisona").textContent = solventeHidrocortisona;
+            document.getElementById("doseSalbutamolSpray").textContent = doseSalbutamolSpray;
+            document.getElementById("doseSalbutamolSolucao").textContent = Math.floor(doseSalbutamolSolucao);
+            document.getElementById("dosePrednisolonaSuspOral2").textContent = dosePrednisolonaSuspOral.toFixed(1);
+            document.getElementById("dosePrednisolonaGotas2").textContent = Math.floor(dosePrednisolonaGotas);
+            document.getElementById("doseSulfatoMg50").textContent = doseSulfatoMg50.toFixed(1);
+            document.getElementById("doseSulfatoMg10").textContent = doseSulfatoMg10.toFixed(1);
+            document.getElementById("doseDexametasona2").textContent = doseDexametasona2.toFixed(1);
+            document.getElementById("doseDexametasona4").textContent = doseDexametasona4.toFixed(1);
+            document.getElementById("doseTerbutalina").textContent = doseTerbutalina.toFixed(1);
+            document.getElementById("solventeTerbutalina").textContent = solventeTerbutalina.toFixed(1);
+
+            //Atualizando os elementos das taquiarritmias
+            document.getElementById("doseAdenosina").textContent = doseAdenosina.toFixed(1);
+            document.getElementById("doseAdenosina2").textContent = doseAdenosina2.toFixed(1);
+            document.getElementById("doseAmiodaronaAtaque").textContent = doseAmiodaronaAtaque.toFixed(1);
+            document.getElementById("diluenteAmiodaronaAtaque").textContent = diluenteAmiodaronaAtaque.toFixed(1);
+            document.getElementById("doseAmiodaronaManutencao").textContent = doseAmiodaronaManutencao.toFixed(1);
+            document.getElementById("diluenteAmiodaronaManutencao").textContent = diluenteAmiodaronaManutencao.toFixed(1);
+            document.getElementById("vazaoAmiodaronaManutencao").textContent = vazaoAmiodaronaManutencao.toFixed(1);
+            document.getElementById("doseCardioversao").textContent = Math.floor(doseCardioversao);
+            document.getElementById("doseCardioversao2").textContent = Math.floor(doseCardioversao2);
+
+            //Atualizando itens das bradiarritmias
+            document.getElementById("doseAdrenalinaBradi").textContent = doseAdrenalina.toFixed(1);
+            document.getElementById("doseAdrenalinaBICBradi").textContent = doseAdrenalinaBIC.toFixed(1);
+            document.getElementById("doseAdrenalinaBIC2Bradi").textContent = doseAdrenalinaBIC2.toFixed(1);
+            document.getElementById("doseAtropina025Bradi").textContent = doseAtropina025.toFixed(1);
+            document.getElementById("doseAtropina05Bradi").textContent = doseAtropina05.toFixed(1);
 
         }
 
