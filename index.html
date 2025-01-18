@@ -4,7 +4,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Calculadora Pediátrica</title>
+    <title>PedCalc</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -95,20 +95,24 @@
             border-radius: 10px;
             margin-bottom: 5%;
           }
+          .subtitulo{
+            padding-top: 3%;
+            padding-bottom: 3%;
+          }
         }
         @media (max-width: 426px) {
             body{
-            font-size: 1.3em;
-          }
-          button{
-            width: 50%;
-          }
-          select{
-            width: 30%;
-          }
-          #peso{
-            width: 55%;
-          }
+                font-size: 1.3em;
+            }
+            button{
+                width: 50%;
+            }
+            select{
+                width: 30%;
+            }
+            #peso{
+                width: 55%;
+            }
         }
     </style>
 </head>
@@ -205,6 +209,22 @@
             <p>2 - <strong>Midazolam (5 mg/ml)</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseMidaSedaContinuo">0</span></strong> ml/h (0,1 mg/kg/h) </p>
             <p>3 - <strong>Cetamina (50 mg/ml)</strong>: Diluir 5 ml em 245 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseCetaminaSedaContinuo">0</span></strong> ml/h (20 mcg/kg/min) </p>
             <p>4 - <strong>Dexmedetomidina (100 mcg/ml)</strong>: Diluir 2 ml em 98 ml de SF 0,9%, infundir em BIC a <strong><span id="doseDexmedetomidinaSedaContinuo">0</span></strong> ml/h (0,5 mcg/kg/h) </p>
+        </div>
+
+        <h2 class="subtitulo" onclick="toggleMedications('Analgesia')" >Analgesia</h2>
+        <div id="medicacoesAnalgesia" class="medicacao">
+            <p>Via oral:</p>
+            <p>1 - <strong>Paraceramol gotas (200 mg/mL)</strong>: dar <strong><span id="doseParacetamolGotas">0</span></strong> gotas de 6/6h se dor ou febre. (dose máx < 12 anos: 35 gotas/dose | dose máx < 12 anos: 55 gotas/dose)</p>
+            <p>2 - <strong>Paraceramol solução oral (32 mg/mL)</strong>: dar <strong><span id="doseParacetamolSuspOral">0</span></strong> ml de 6/6h se dor ou febre. (dose máx: 30 ml/dose)</p>
+            <p>3 - <strong>Dipirona gotas (500 mg/ml)</strong>: dar <strong><span id="doseDipironaGotas">0</span></strong> gotas de 6/6h se dor ou febre. (> 3 meses)(dose máx: 40 gotas/dose)</p>
+            <p>4 - <strong>Dipirona solução oral (50 g/ml)</strong>: dar <strong><span id="doseDipironaSuspOral">0</span></strong> ml de 6/6h se dor ou febre. (> 3 meses)(dose máx: 20 ml/dose)</p>
+            <p>5 - <strong>Ibuprofeno gotas (50 mg/ml)</strong>: dar <strong><span id="doseIbuprofenoGotas">0</span></strong> gotas de 6/6 por 5 dias. (> 6 meses) (dose máx: 40 gotas/dose)</p>
+            <p>6 - <strong>Ibuprofeno solução oral (30 mg/ml)</strong>: dar <strong><span id="doseIbuprofenoSuspOral">0</span></strong> ml de 6/6h por 5 dias. (> 6 meses) (dose máx: 7 ml/dose)</p>
+            <br>
+            <p>Injetável:</p>
+            <p>1 - <strong>Dipirona (500 mg/ml)</strong>: administrar de <strong><span id="doseDipironaInjetavel">0</span></strong> a <strong><span id="doseDipironaInjetavel2">0</span></strong> ml IM ou EV (EV: diluido 10 ml em 5 minutos) de 6/6h (dose máx: 10 ml/dia) (< 1 ano somente IM)</p>
+            <p>2 - <strong>Morfina (10 mg/ml)</strong>: Diluir 1 ml em 19 ml de SF 0,9%, administrar de <strong><span id="doseMorfina">0</span></strong> a <strong><span id="doseMorfina2">0</span></strong> ml EV em 5 minutos de 2/2h ou 4/4h (dose: 0,05 - 0,2 mg/kg/dose)</p>
+            <p>3 - <strong>Morfina (10 mg/ml)</strong>: Diluir 1 ml em 99 ml de SF 0,9%, infundir EV a <strong><span id="vazaoMorfinaBIC">0</span></strong> ml/h (0,02 mg/kg/h)</p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('Anafilaxia')" >Anafilaxia</h2>
@@ -453,6 +473,48 @@
             const doseCetaminaSedaContinuo = peso * 1.2;
             const doseDexmedetomidinaSedaContinuo = peso * 0.25;
 
+            //Doses analgesia
+            let doseParacetamolGotas = peso * 1;
+            if (doseParacetamolGotas > 35 && idadeEmAnos < 12){
+                doseParacetamolGotas = 35;
+            } else if (doseParacetamolGotas > 55 && idadeEmAnos >= 12){
+                doseParacetamolGotas = 55;
+            }
+            let doseParacetamolSuspOral = peso * 0.4;
+            if (doseParacetamolSuspOral > 30){
+                doseParacetamolSuspOral = 30;
+            }
+            let doseDipironaGotas = peso * 1;
+            if (doseDipironaGotas > 40){
+                doseDipironaGotas = 40;
+            }
+            let doseDipironaSuspOral = peso * 0.4;
+            if (doseDipironaSuspOral > 20){
+                doseDipironaSuspOral = 20;
+            }
+            let doseIbuprofenoGotas = peso * 1;
+            if (doseIbuprofenoGotas > 40){
+                doseIbuprofenoGotas = 40;
+            }
+            let doseIbuprofenoSuspOral = peso * 0.3;
+            if (doseIbuprofenoSuspOral > 7){
+                doseIbuprofenoSuspOral = 7;
+            }
+            
+            let doseDipironaInjetavel = peso * 0.02;
+            if (doseDipironaInjetavel > 2.5){
+                doseDipironaInjetavel = 2.5;
+            }
+            let doseDipironaInjetavel2 = peso * 0.04;
+            if (doseDipironaInjetavel2 > 2.5){
+                doseDipironaInjetavel2 = 2.5;
+            }
+            const doseMorfina = peso * 0.1;
+            const doseMorfina2 = peso * 0.4;
+            const vazaoMorfinaBIC = peso * 0.2;
+
+
+
             //Doses Anafilaxia
             const doseAdrenaAnafilaxia = peso * 0.01;
             let doseDifinidramina;
@@ -617,6 +679,7 @@
             document.getElementById("doseCetaminaSedaContinuo").textContent = doseCetaminaSedaContinuo.toFixed(1);
             document.getElementById("doseDexmedetomidinaSedaContinuo").textContent = doseDexmedetomidinaSedaContinuo.toFixed(1);
 
+        
             //Atualizando doses Anafilaxia
             document.getElementById("doseAdrenaAnafilaxia").textContent = doseAdrenaAnafilaxia.toFixed(2);
             document.getElementById("doseDifinidramina").textContent = doseDifinidramina;
@@ -666,6 +729,19 @@
             document.getElementById("doseAdrenalinaBIC2Bradi").textContent = doseAdrenalinaBIC2.toFixed(1);
             document.getElementById("doseAtropina025Bradi").textContent = doseAtropina025.toFixed(1);
             document.getElementById("doseAtropina05Bradi").textContent = doseAtropina05.toFixed(1);
+
+            //Atualizando os elementos da analgesia
+            document.getElementById("doseParacetamolGotas").textContent = Math.floor(doseParacetamolGotas);
+            document.getElementById("doseParacetamolSuspOral").textContent = doseParacetamolSuspOral.toFixed(1);
+            document.getElementById("doseDipironaGotas").textContent = Math.floor(doseDipironaGotas);
+            document.getElementById("doseDipironaSuspOral").textContent = doseDipironaSuspOral.toFixed(1);
+            document.getElementById("doseIbuprofenoGotas").textContent = Math.floor(doseIbuprofenoGotas);
+            document.getElementById("doseIbuprofenoSuspOral").textContent = doseIbuprofenoSuspOral.toFixed(1);
+            document.getElementById("doseDipironaInjetavel").textContent = doseDipironaInjetavel.toFixed(1);
+            document.getElementById("doseDipironaInjetavel2").textContent = doseDipironaInjetavel2.toFixed(1);
+            document.getElementById("doseMorfina").textContent = doseMorfina.toFixed(1);
+            document.getElementById("doseMorfina2").textContent = doseMorfina2.toFixed(1);
+            document.getElementById("vazaoMorfinaBIC").textContent = vazaoMorfinaBIC.toFixed(1);
 
         }
 
