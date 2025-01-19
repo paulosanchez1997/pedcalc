@@ -12,6 +12,9 @@
             padding: 0px;
             margin: 0px;
         }
+        h4{
+            padding-left: 1%;
+        }
         .medicacao {
             display: none; /* Esconder as medicações inicialmente */
         }
@@ -132,6 +135,7 @@
     </div>
 
     <div id="corpo">
+        <br><h4>Emergências pediátricas</h4>
         <h2 class="subtitulo" onclick="toggleMedications('SinaisVitais')">Sinais vitais</h2>
         <div id="medicacoesSinaisVitais" class="medicacao">
             <p><strong>Frequência cardíaca</strong>: <strong><span id="fc">0</span></strong> a <strong><span id="fc2">0</span></strong> bpm</p>
@@ -256,6 +260,7 @@
             <p>1 - <strong>Nitroprussiato de sódio</strong>: Diluir 1 amp (2 ml) em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNipride">0</span></strong> a <strong><span id="doseNipride2">0</span></strong> ml/h (0,5-10 microgramas/kg/minuto)</p>
         </div>
 
+        <br><h4>Emergências respiratórias</h4>
         <h2 class="subtitulo" onclick="toggleMedications('ASMA')" >Asma exacerbada</h2>
         <div id="medicacoesASMA" class="medicacao">
             <p>Broncodilatador:</p>
@@ -277,6 +282,7 @@
             <p>2 - <strong>Sulfato de Mg 10% (100 mg/ml)</strong>: administrar <strong><span id="doseSulfatoMg10">0</span></strong> ml diluido em 50 ml de SF 0,9% em 30 min (50 mg/kg / dose máx: 2g)</p>
         </div>
 
+        <br><h4>Emergências cardiovasculares</h4>
         <h2 class="subtitulo" onclick="toggleMedications('Taquiarritmias')" >Taquiarritmias</h2>
         <div id="medicacoesTaquiarritmias" class="medicacao">
             <p>Taquicardia supraventricular estável (QRS estreito):</p>
@@ -300,6 +306,31 @@
             <p>4 - <strong>Atropina (0,25 mg/ml)</strong>: Adiministrar <strong><span id="doseAtropina025Bradi">0</span></strong> ml EV, pode repetir mais 2 vezes (0,02 mg/kg / dose máx: 0,5 mg crianças, 1 mg adolescentes)</p>
             <p>5 - <strong>Atropina (0,5 mg/ml)</strong>: Adiministrar <strong><span id="doseAtropina05Bradi">0</span></strong> ml EV, pode repetir mais 2 vezes (0,02 mg/kg / dose máx: 0,5 mg crianças, 1 mg adolescentes)</p>
         </div>
+
+        <br><h4>Emergências gastrointestinais</h4>
+        <h2 class="subtitulo" onclick="toggleMedications('GECA')" >GECA</h2>
+        <div id="medicacoesGECA" class="medicacao">
+            <p>Pacientes com desidratação grave</p>
+            <p>1 - <strong>Expansão volêmica</strong>: Ringer lactato <strong><span id="doseExpansaoCristaloide">0</span></strong> ml EV em 20 minutos, repetir até  melhora da desidratação.</p>
+            <p>2 - <strong>Hidratação de manutenção</strong> EV em BIC:</p>
+            <p>- SG5% &nbsp;---------------------&nbsp; 500 ml</p>
+            <p>- NaCl 20% &nbsp;----------------&nbsp;&nbsp; 20 ml</p>
+            <p>- KCl 19,2% &nbsp;---------------&nbsp;&nbsp;&nbsp; 5 ml</p>
+            <p>Vazão: <strong><span id="vazaoHVManutencao">0</span></strong> ml/h contínuo 24h.</p>
+            <br>
+            <p>Antibióticoterapia: (< 3 meses: cef | < 30 kg: azi ou cef | > 30 kg cipro ou cef)</p>
+            <p>1 - <strong>Ceftriaxona (500mg ou 1g)</strong>: Administrar <strong><span id="doseCeftriaxonaGeca">0</span></strong> a <strong><span id="doseCeftriaxonaGeca2">0</span></strong> mg IM ou EV (diluido com <strong><span id="diluenteCeftriaxonaGeca">0</span></strong> ml de SF 0,9% em 30 minutos) 1x ao dia por 3 a 5 dias. (50 - 100 mg/kg/dia)</p>
+            <p>2 - <strong>Azitromicina (40 mg/ml)</strong>: Dar <strong><span id="doseAzitromicinaGeca">0</span></strong> ml VO no 1º dia, depois <strong><span id="doseAzitromicinaGeca2">0</span></strong> ml 1x ao dia por 4 dias. (< 30 Kg)</p>
+            <p>3 - <strong>Ciprofloxacino 500mg</strong>: dar 1 comprimido VO de 12/12h por 3 dias. (> 30 Kg)</p>
+            <br>
+            <p>Antieméticos:</p>
+            <p>1 - <strong>Ondansetrona (2 mg/ml)</strong>: administrar <strong><span id="doseOndansetronaGeca">0</span></strong> mg IM ou EV (diluido em 50 ml de SG5% em 15 minutos) de 8/8h. (> 6 meses)</p>
+            <p>2 - <strong>Dramin B6 DL &reg; (3 mg/ml)</strong>: administrar <strong><span id="doseDraminB6DLEV">0</span></strong> ml EV diluido em 10 ml de AD em 2 minutos de 6/6h. (> 2 anos) (dose máx: 300mg/dia)</p>
+            <p>2 - <strong>Dramin B6 &reg; (50 mg/ml)</strong>: administrar <strong><span id="doseDraminB6IM">0</span></strong> ml IM puro de 8/8h. (> 2 anos)</p>
+            <p>3 - <strong>Dramin B6 &reg; gotas (25 mg/ml)</strong>: dar <strong><span id="doseDraminB6VOGotas">0</span></strong> gotas de 8/8h. (> 2 anos)</p>
+            <p>4 - <strong>Dramin &reg; solução oral (2,5 mg/ml)</strong>: dar <strong><span id="doseDraminVOSolucOral">0</span></strong> ml de 8/8h. (> 2 anos)</p>
+        </div>
+
         <br><br><br>
 
     </div>
@@ -321,75 +352,36 @@
             }
 
 
-            //Calculos dos sinais vitais
+            //Calculos dos sinais vitais------------------------------------------------------------SINAIS VITAIS---------------------------------------------------------------------
             let fc;
             let fc2;
-            if (idadeEmAnos < 0.084){
-                fc = 100;
-                fc2 = 205;
-            } else if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){
-                fc = 100;
-                fc2 = 180;
-            } else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){
-                fc = 98;
-                fc2 = 140;
-            }else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){
-                fc = 80;
-                fc2 = 120;
-            }else if (idadeEmAnos >= 6 && idadeEmAnos <= 11){
-                fc = 75;
-                fc2 = 118;
-            }else if (idadeEmAnos >= 12){
-                fc = 60;
-                fc2 = 100;
-            }
+            if (idadeEmAnos < 0.084){fc = 100;fc2 = 205;}
+            else if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){fc = 100; fc2 = 180;}
+            else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){fc = 98; fc2 = 140;}
+            else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){fc = 80; fc2 = 120;}
+            else if (idadeEmAnos >= 6 && idadeEmAnos <= 11){fc = 75; fc2 = 118;}
+            else if (idadeEmAnos >= 12){fc = 60; fc2 = 100;}
 
             let fr;
             let fr2;
-            if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){
-                fr = 30;
-                fr2 = 53;
-            } else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){
-                fr = 22;
-                fr2 = 37;
-            }else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){
-                fr = 20;
-                fr2 = 28;
-            }else if (idadeEmAnos >= 6 && idadeEmAnos <= 10){
-                fr = 18;
-                fr2 = 25;
-            }else if (idadeEmAnos >= 11){
-                fr = 12;
-                fr2 = 20;
-            }
+            if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){fr = 30; fr2 = 53;}
+            else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){fr = 22; fr2 = 37;}
+            else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){fr = 20; fr2 = 28;}
+            else if (idadeEmAnos >= 6 && idadeEmAnos <= 10){fr = 18; fr2 = 25;}
+            else if (idadeEmAnos >= 11){fr = 12; fr2 = 20;}
 
             let pas;
             let pas2;
-            if (idadeEmAnos < 0.084){
-                pas = 67;
-                pas2 = 84;
-            } else if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){
-                pas = 72;
-                pas2 = 104;
-            } else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){
-                pas = 70 + (idadeEmAnos * 2);
-                pas2 = 106;
-            } else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){
-                pas = 70 + (idadeEmAnos * 2);
-                pas2 = 112;
-            } else if (idadeEmAnos >= 6 && idadeEmAnos <= 9){
-                pas = 70 + (idadeEmAnos * 2);
-                pas2 = 115;
-            } else if (idadeEmAnos >= 10 && idadeEmAnos <= 11){
-                pas = 90;
-                pas2 = 120;
-            } else if (idadeEmAnos >= 12){
-                pas = 90;
-                pas2 = 131;
-            }
+            if (idadeEmAnos < 0.084){pas = 60; pas2 = 84;}
+            else if (idadeEmAnos >= 0.084 && idadeEmAnos < 1){ pas = 70; pas2 = 104;}
+            else if (idadeEmAnos >= 1 && idadeEmAnos <= 2){pas = 70 + (idadeEmAnos * 2); pas2 = 106;}
+            else if (idadeEmAnos >= 3 && idadeEmAnos <= 5){pas = 70 + (idadeEmAnos * 2); pas2 = 112;}
+            else if (idadeEmAnos >= 6 && idadeEmAnos <= 9){pas = 70 + (idadeEmAnos * 2); pas2 = 115;}
+            else if (idadeEmAnos >= 10 && idadeEmAnos <= 11){pas = 90; pas2 = 120;}
+            else if (idadeEmAnos >= 12){pas = 90; pas2 = 131;}
 
 
-            // Cálculos das doses IOT
+            // Cálculos das doses IOT-------------------------------------------------------------IOT------------------------------------------------------------------------
             const doseFentanil = peso * 0.4;
             const doseMidazolam = peso * 0.3;
             const doseEtomidato = peso * 0.3;
@@ -433,7 +425,7 @@
                 tamanhoLamina = 3;
             }
 
-            // Doses PCR
+            // Doses PCR-------------------------------------------------------------------------PCR----------------------------------------------------------------------------
             const choque1 = peso * 2;
             const choque2 = peso * 4;
             const choque3 = peso * 6;
@@ -464,7 +456,7 @@
                 doseAtropina05 = 4;
             }
 
-            // Doses Sedação
+            // Doses Sedação---------------------------------------------------------------------SEDAÇÃO-----------------------------------------------------------------------------
             const doseFentanilSedaIntermitente = peso * 0.1;
             const doseFentanilSedaContinuo = peso * 0.1;
             const doseMidaSedaIntermitente = peso * 0.02;
@@ -473,7 +465,7 @@
             const doseCetaminaSedaContinuo = peso * 1.2;
             const doseDexmedetomidinaSedaContinuo = peso * 0.25;
 
-            //Doses analgesia
+            //Doses analgesia--------------------------------------------------------------------ANALGESIA----------------------------------------------------------------------------
             let doseParacetamolGotas = peso * 1;
             if (doseParacetamolGotas > 35 && idadeEmAnos < 12){
                 doseParacetamolGotas = 35;
@@ -515,7 +507,7 @@
 
 
 
-            //Doses Anafilaxia
+            //Doses Anafilaxia--------------------------------------------------------------ANAFILAXIA-----------------------------------------------------------------------------
             const doseAdrenaAnafilaxia = peso * 0.01;
             let doseDifinidramina;
             if (peso < 50){
@@ -546,7 +538,7 @@
                 dosePrednisolonaGotas = 110
             }
 
-            //Doses Drogas Vasoativas
+            //Doses Drogas Vasoativas---------------------------------------------------------------DVA----------------------------------------------------------------------
             const doseNoradrenalina = peso * 0.375;
             const doseNoradrenalina2 = peso * 0.75;
             const doseAdrenalinaBIC = peso * 0.3;
@@ -558,7 +550,7 @@
             const doseNipride = peso * 0.15;
             const doseNipride2 = peso * 3;
 
-            //Doses da asma exacerbada
+            //Doses da asma exacerbada-------------------------------------------------------------ASMA------------------------------------------------------------------------
             let doseHidrocortisona = peso * 5;
             if (doseHidrocortisona > 250){
                 doseHidrocortisona = 250;
@@ -572,10 +564,10 @@
                 doseSalbutamolSpray = "2 - 6";
             }else if (idadeEmAnos >= 6 && idadeEmAnos < 12){
                 doseBrometoIpatropio = 20;
-                doseSalbutamolSpray = '4 - 10';
+                doseSalbutamolSpray = "4 - 10";
             }else{
                 doseBrometoIpatropio = 40;
-                doseSalbutamolSpray = '4 - 10';
+                doseSalbutamolSpray = "4 - 10";
             }
             let doseSalbutamolSolucao = peso * 0.4;
             if (doseSalbutamolSolucao > 20){
@@ -603,7 +595,7 @@
             }
 
 
-            //Doses Taquiarritmias
+            //Doses Taquiarritmias--------------------------------------------------------------TAQUIARRITMIA--------------------------------------------------------------------------
             let doseAdenosina = peso * 0.03;
             if (doseAdenosina > 2){
                 doseAdenosina = 2;
@@ -622,6 +614,65 @@
             const vazaoAmiodaronaManutencao = (doseAmiodaronaManutencao + diluenteAmiodaronaManutencao)/24;
             const doseCardioversao = peso * 0.5;
             const doseCardioversao2 = peso * 2;
+
+            //Doses GECA ----------------------------------------------------------------------------GECA---------------------------------------------------------------------------
+            const doseExpansaoCristaloide = peso * 20;                                     //EXPANSÃO VOLÊMICA
+            let vazaoHVManutencao;
+            if (peso < 10){                                                                //HV MANUTENÇÃO
+                vazaoHVManutencao = peso * 4;
+            } else if (peso >= 10 && peso < 20){
+                vazaoHVManutencao = 40 + (2*(peso-10));
+            } else{
+                vazaoHVManutencao = 60 + (peso-20)
+            }
+            const doseCeftriaxonaGeca = peso * 50;                                         //ATB
+            const doseCeftriaxonaGeca2 = peso * 100;
+            const diluenteCeftriaxonaGeca = doseCeftriaxonaGeca2 / 10;
+            const doseAzitromicinaGeca = peso * 0.25;
+            const doseAzitromicinaGeca2 = peso * 0.125;
+
+            let doseOndansetronaGeca;                                                      //ONDANSETRONA
+            if (idadeEmAnos < 0.5){
+                doseOndansetronaGeca = 0;
+            } else if (idadeEmAnos >= 0.5 && idadeEmAnos < 2){
+                doseOndansetronaGeca = 2;
+            }else if (idadeEmAnos >= 2 && idadeEmAnos < 10){
+                doseOndansetronaGeca = 4;
+            }else{
+                doseOndansetronaGeca = 8;
+            }
+            let doseDraminB6DLEV = peso * 0.4;                                             //DRAMIN EV
+            if (idadeEmAnos < 2){
+                doseDraminB6DLEV = 0;
+            }
+            if (doseDraminB6DLEV > 25){
+                doseDraminB6DLEV = 25;
+            }
+            let doseDraminB6IM = peso * 0.02;                                              //DRAMIN IM
+            if (idadeEmAnos < 2){
+                doseDraminB6IM = 0;
+            }
+            let doseDraminB6VOGotas = peso * 1;                                            //DRAMIN GOTAS
+            if (idadeEmAnos < 2){
+                doseDraminB6VOGotas = 0;
+            } else if (idadeEmAnos >= 2 && idadeEmAnos < 6 && doseDraminB6VOGotas > 20){
+                doseDraminB6VOGotas = 20;
+            } else if (idadeEmAnos >= 6 && idadeEmAnos < 12 && doseDraminB6VOGotas > 40){
+                doseDraminB6VOGotas = 40;
+            } else if (idadeEmAnos >= 12 && doseDraminB6VOGotas > 106){
+                doseDraminB6VOGotas = 40;
+            }
+            let doseDraminVOSolucOral = peso * 0.5;                                        //DRAMIN SOLUÇÃO ORAL
+            if (idadeEmAnos < 2){
+                doseDraminVOSolucOral = 0;
+            } else if (idadeEmAnos >= 2 && idadeEmAnos < 6 && doseDraminVOSolucOral > 10){
+                doseDraminVOSolucOral = 10;
+            } else if (idadeEmAnos >= 6 && idadeEmAnos < 12 && doseDraminVOSolucOral > 20){
+                doseDraminVOSolucOral = 20;
+            } else if (idadeEmAnos >= 12 && doseDraminVOSolucOral > 53){
+                doseDraminVOSolucOral = 53;
+            }
+
 
 
             // Atualizando os elementos das drogas vasoativas
@@ -742,6 +793,21 @@
             document.getElementById("doseMorfina").textContent = doseMorfina.toFixed(1);
             document.getElementById("doseMorfina2").textContent = doseMorfina2.toFixed(1);
             document.getElementById("vazaoMorfinaBIC").textContent = vazaoMorfinaBIC.toFixed(1);
+
+            //Atualizando os elementos da GECA
+            document.getElementById("doseExpansaoCristaloide").textContent = doseExpansaoCristaloide.toFixed(1);
+            document.getElementById("vazaoHVManutencao").textContent = vazaoHVManutencao.toFixed(1);
+            document.getElementById("doseCeftriaxonaGeca").textContent = Math.floor(doseCeftriaxonaGeca);
+            document.getElementById("doseCeftriaxonaGeca2").textContent = Math.floor(doseCeftriaxonaGeca2);
+            document.getElementById("diluenteCeftriaxonaGeca").textContent = Math.floor(diluenteCeftriaxonaGeca);
+            document.getElementById("doseAzitromicinaGeca").textContent = doseAzitromicinaGeca.toFixed(1);
+            document.getElementById("doseAzitromicinaGeca2").textContent = doseAzitromicinaGeca2.toFixed(1);
+
+            document.getElementById("doseOndansetronaGeca").textContent = Math.floor(doseOndansetronaGeca);
+            document.getElementById("doseDraminB6DLEV").textContent = doseDraminB6DLEV.toFixed(1);
+            document.getElementById("doseDraminB6IM").textContent = doseDraminB6IM.toFixed(1);
+            document.getElementById("doseDraminB6VOGotas").textContent = Math.floor(doseDraminB6VOGotas);
+            document.getElementById("doseDraminVOSolucOral").textContent = doseDraminVOSolucOral.toFixed(1);
 
         }
 
