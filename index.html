@@ -14,6 +14,7 @@
         }
         h4{
             padding-left: 1%;
+            color: #151515;
         }
         .medicacao {
             display: none; /* Esconder as medicações inicialmente */
@@ -31,6 +32,7 @@
             border-bottom-width: 1px;
             border-top-width: 1px;
             border-color: #949494;
+            color: #151515;;
         }
         strong {
             font-size: 1.1em;
@@ -59,6 +61,7 @@
             border-bottom-width: 1px;
             border-color: #949494;
             text-align: justify;
+            color: #424242;
         }
         input{
             margin-bottom: 1%;
@@ -69,6 +72,13 @@
         }
         button{
             width: 175px;
+        }
+        .titulo{
+            padding-top: 1%;
+            padding-bottom: 1%;
+            font-size: 1.2em;
+            text-decoration: underline;
+            color: #151515;
         }
 
         @media (max-width: 768px) {
@@ -105,7 +115,7 @@
         }
         @media (max-width: 426px) {
             body{
-                font-size: 1.3em;
+                font-size: 1.2em;
             }
             button{
                 width: 50%;
@@ -115,6 +125,9 @@
             }
             #peso{
                 width: 55%;
+            }
+            .titulo{
+                font-size: 1.4em;
             }
         }
     </style>
@@ -145,33 +158,34 @@
 
         <h2 class="subtitulo" onclick="toggleMedications('Intubacao')">Intubação em Sequência Rápida</h2>
         <div id="medicacoesIntubacao" class="medicacao">
-            <p>Pré-tratamento:</p>
+            <p class="titulo">Pré-tratamento:</p>
             <p>1 - <strong>Fentanil (50 mcg/ml)</strong>: diluir 2 ml em 8 ml de AD (10 mcg/ml), administrar <strong><span id="doseFentanil">0</span></strong> ml da solução (4 mcg/kg)</p>
             <p>2 - <strong>Adrenalina Push Dose</strong>: Diluir 1 ml em 19 ml de AD, desprezar 19 ml, diluir o ml restante com 9 ml de AD, administrar <strong><span id="doseAdrenaPushDose">0</span></strong> ml da solução</p><br>
-            <p>Hipnótico:</p>
+            <p class="titulo">Hipnótico:</p>
             <p>1 - <strong>Midazolam (5 mg/ml)</strong>: diluir 2 ml em 8 ml de AD (1 mg/ml), administrar <strong><span id="doseMidazolam">0</span></strong> ml da solução (0,3 mg/kg)</p>
             <p>2 - <strong>Etomidato (10 mg/ml)</strong>: diluir 2 ml em 18 ml de AD (1 mg/ml), administrar <strong><span id="doseEtomidato">0</span></strong> ml da solução (0,3 mg/kg)</p>
             <p>3 - <strong>Cetamina (50 mg/ml)</strong>: diluir 2 ml em 8 ml de AD (10 mg/ml), administrar <strong><span id="doseCetamina">0</span></strong> ml da solução (2 mg/kg)</p>
             <p>4 - <strong>Propofol 1% (10 mg/ml)</strong>: administrar <strong><span id="dosePropofol">0</span></strong> ml (4 mg/kg)</p><br>
-            <p>Bloqueador neuromuscular:</p>
+            <p class="titulo">Bloqueador neuromuscular:</p>
             <p>1 - <strong>Succinilcolina 100mg</strong>: diluir o pó com 10 ml de AD (10 mg/ml), administrar <strong><span id="doseSucc100">0</span></strong> ml da solução (2 mg/kg)</p>
             <p>2 - <strong>Succinilcolina 500mg</strong>: diluir o pó com 4 ml de AD (100 mg/ml), puxar 1ml, diluir com 9 ml de AD (10 mg/ml), administrar <strong><span id="doseSucc500">0</span></strong> ml da solução (2 mg/kg)</p>
             <p>3 - <strong>Rocurônio (10 mg/ml)</strong>: administrar <strong><span id="doseRocuronio">0</span></strong> ml (1,2 mg/kg)</p>
             <br>
+            <p class="titulo">Tubo e Lâmina:</p>
             <p><strong>Usar tubo nº </strong><strong><span id="tamanhoTubo">0</span></strong> mm e inserir até </strong><strong><span id="inserir">0</span></strong> cm</p>
             <p><strong>Usar lâmina </strong><strong><span id="tamanhoLamina">0</span></strong></p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('PCR')">PCR</h2>
         <div id="medicacoesPCR" class="medicacao">
-            <p>Choque:</p>
+            <p class="titulo">Choque:</p>
             <p>1º Choque: <strong><span id="choque1">0</span></strong> J</p>
             <p>2º Choque: <strong><span id="choque2">0</span></strong> J</p>
             <p>3º Choque: <strong><span id="choque3">0</span></strong> J</p>
             <p>4º Choque: <strong><span id="choque4">0</span></strong> J</p>
             <p>5º Choque: <strong><span id="choque5">0</span></strong> J</p>
             <br>
-            <p>Medicações:</p>
+            <p class="titulo">Medicações:</p>
             <p>1 - <strong>Adrenalina</strong>: diluir 1 ml em 9 ml de AD, administrar <strong><span id="doseAdrenalina">0</span></strong> ml da solução</p>
             <p>2 - <strong>Amiodarona</strong>: administrar <strong><span id="doseAmiodarona">0</span></strong> ml</p>
             <p>3 - <strong>Lidocaina (2%) dose de ataque</strong>: administrar <strong><span id="doseLidocainaAtaque">0</span></strong> ml puro</p>
@@ -202,13 +216,13 @@
 
         <h2 class="subtitulo" onclick="toggleMedications('Sedacao')">Sedação</h2>
         <div id="medicacoesSedacao" class="medicacao">
-            <p>Sedação para procedimentos:</p>
+            <p class="titulo">Sedação para procedimentos:</p>
             <p>1 - <strong>Fentanil (50 mcg/ml)</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseFentanilSedaIntermitente">0</span></strong> ml da solução EV ou Intranasal (1 mcg/kg) </p>
             <p>2 - <strong>Midazolam (5 mg/ml)</strong>: Administrar <strong><span id="doseMidaSedaIntermitente">0</span></strong> ml EV ou IM (0,1 mg/kg) </p>
             <p>3 - <strong>Cetamina (50 mg/ml)</strong>: Diluir 2 ml em 8 ml de AD, administrar <strong><span id="doseCetaminaSedaIntermitente">0</span></strong> ml (1 mg/kg) </p>
             <p>OBS: Manter monitorização + catéter nasal + jejum de 4 horas de preferência</p>
             <br>
-            <p>Sedação contínua (Fentanil + hipnótico)</p>
+            <p class="titulo">Sedação contínua (Fentanil + hipnótico)</p>
             <p>1 - <strong>Fentanil (50 mcg/ml)</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseFentanilSedaContinuo">0</span></strong> ml/h (1 mcg/kg/h) </p>
             <p>2 - <strong>Midazolam (5 mg/ml)</strong>: Diluir 10 ml em 40 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseMidaSedaContinuo">0</span></strong> ml/h (0,1 mg/kg/h) </p>
             <p>3 - <strong>Cetamina (50 mg/ml)</strong>: Diluir 5 ml em 245 ml de SF 0,9%, infundir EV em BIC a <strong><span id="doseCetaminaSedaContinuo">0</span></strong> ml/h (20 mcg/kg/min) </p>
@@ -217,7 +231,7 @@
 
         <h2 class="subtitulo" onclick="toggleMedications('Analgesia')" >Analgesia</h2>
         <div id="medicacoesAnalgesia" class="medicacao">
-            <p>Via oral:</p>
+            <p class="titulo">Via oral:</p>
             <p>1 - <strong>Paraceramol gotas (200 mg/mL)</strong>: dar <strong><span id="doseParacetamolGotas">0</span></strong> gotas de 6/6h se dor ou febre. (dose máx < 12 anos: 35 gotas/dose | dose máx < 12 anos: 55 gotas/dose)</p>
             <p>2 - <strong>Paraceramol solução oral (32 mg/mL)</strong>: dar <strong><span id="doseParacetamolSuspOral">0</span></strong> ml de 6/6h se dor ou febre. (dose máx: 30 ml/dose)</p>
             <p>3 - <strong>Dipirona gotas (500 mg/ml)</strong>: dar <strong><span id="doseDipironaGotas">0</span></strong> gotas de 6/6h se dor ou febre. (> 3 meses)(dose máx: 40 gotas/dose)</p>
@@ -225,7 +239,7 @@
             <p>5 - <strong>Ibuprofeno gotas (50 mg/ml)</strong>: dar <strong><span id="doseIbuprofenoGotas">0</span></strong> gotas de 6/6 por 5 dias. (> 6 meses) (dose máx: 40 gotas/dose)</p>
             <p>6 - <strong>Ibuprofeno solução oral (30 mg/ml)</strong>: dar <strong><span id="doseIbuprofenoSuspOral">0</span></strong> ml de 6/6h por 5 dias. (> 6 meses) (dose máx: 7 ml/dose)</p>
             <br>
-            <p>Injetável:</p>
+            <p class="titulo">Injetável:</p>
             <p>1 - <strong>Dipirona (500 mg/ml)</strong>: administrar de <strong><span id="doseDipironaInjetavel">0</span></strong> a <strong><span id="doseDipironaInjetavel2">0</span></strong> ml IM ou EV (EV: diluido 10 ml em 5 minutos) de 6/6h (dose máx: 10 ml/dia) (< 1 ano somente IM)</p>
             <p>2 - <strong>Morfina (10 mg/ml)</strong>: Diluir 1 ml em 19 ml de SF 0,9%, administrar de <strong><span id="doseMorfina">0</span></strong> a <strong><span id="doseMorfina2">0</span></strong> ml EV em 5 minutos de 2/2h ou 4/4h (dose: 0,05 - 0,2 mg/kg/dose)</p>
             <p>3 - <strong>Morfina (10 mg/ml)</strong>: Diluir 1 ml em 99 ml de SF 0,9%, infundir EV a <strong><span id="vazaoMorfinaBIC">0</span></strong> ml/h (0,02 mg/kg/h)</p>
@@ -233,51 +247,51 @@
 
         <h2 class="subtitulo" onclick="toggleMedications('Anafilaxia')" >Anafilaxia</h2>
         <div id="medicacoesAnafilaxia" class="medicacao">
-            <p>Adrenalina:</p>
+            <p class="titulo">Adrenalina:</p>
             <p>1 - <strong>Adrenalina</strong>: Administrar <strong><span id="doseAdrenaAnafilaxia">0</span></strong> ml IM vasto lateral (0,01 ml/kg/dose). Pode ser repetida a cada 5-15 minutos</p>
             <br>
-            <p>Anti-histamínico:</p>
+            <p class="titulo">Anti-histamínico:</p>
             <p>1 - <strong>Difinidramina (50 mg/ml em 1 ml) (> 2 anos)</strong>: Administrar <strong><span id="doseDifinidramina">0</span></strong> mg EV diluido de 6/6h ou 4/4h (1 mg/kg/dose) por 3 a 5 dias (dose máx: 50 mg/dose)</p><br>
             <p>Corticoterapia: Escolha uma das opções a seguir:</p>
             <p>1 - <strong>Metilprednisolona</strong>: Administrar <strong><span id="doseMetilprednisolona">0</span></strong> mg EV agora (2 mg/kg - max 60mg/dose), e <strong><span id="doseMetilprednisolonaManut">0</span></strong> mg EV de 6/6h (1 mg/kg) por 3 a 5 dias</p>
             <p>ou</p>
             <p>2 - <strong>Prednisolona</strong>: Administrar <strong><span id="dosePrednisolonaSuspOral">0</span></strong> ml ou <strong><span id="dosePrednisolonaGotas">0</span></strong> gotas VO de 1x ao dia por 3 a 5 dias (1mg/kg/dia / dose máx: 60mg/dia)</p><br>
-            <p>Orientações:</p>
+            <p class="titulo">Orientações:</p>
             <p>1 - Decúbito dorsal com elevação dos membros inferiores.</p>
         </div>
 
         <h2 class="subtitulo" onclick="toggleMedications('DVA')" >Drogas vasoativas</h2>
         <div id="medicacoesDVA" class="medicacao">
-            <p>Vasopressores:</p>
+            <p class="titulo">Vasopressores:</p>
             <p>1 - <strong>Noradrenalina</strong>: Diluir 2 ml em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNoradrenalina">0</span></strong> a <strong><span id="doseNoradrenalina2">0</span></strong> ml/h (0,05-0,1 microgramas/kg/minuto)</p>
             <p>2 - <strong>Adrenalina</strong>: Diluir 1 amp (1 ml) em 99 ml de SG5%, infundir ev em BIC de <strong><span id="doseAdrenalinaBIC">0</span></strong> a <strong><span id="doseAdrenalinaBIC2">0</span></strong> ml/h (0,05-0,3 micrograma/kg/minuto)</p>
             <br>
-            <p>Inotrópicos:</p>
+            <p class="titulo">Inotrópicos:</p>
             <p>1 - <strong>Dobutamina</strong>: Diluir 1 amp (20 ml) em 230 ml de SG5%, infundir ev em BIC de <strong><span id="doseDobutamina">0</span></strong> a <strong><span id="doseDobutamina2">0</span></strong> ml/h (5-20 microgramas/kg/minuto)</p>
             <p>2 - <strong>Milrinone</strong>: Diluir 2 amp (20 ml) em 180 ml de SG5%, infundir ev em BIC de <strong><span id="doseMilrinone">0</span></strong> a <strong><span id="doseMilrinone2">0</span></strong> ml/h (0,375-0,7 micrograma/kg/minuto)</p>
             <br>
-            <p>Vasodilatadores</p>
+            <p class="titulo">Vasodilatadores</p>
             <p>1 - <strong>Nitroprussiato de sódio</strong>: Diluir 1 amp (2 ml) em 248 ml de SG5%, infundir ev em BIC de <strong><span id="doseNipride">0</span></strong> a <strong><span id="doseNipride2">0</span></strong> ml/h (0,5-10 microgramas/kg/minuto)</p>
         </div>
 
         <br><h4>Emergências respiratórias</h4>
         <h2 class="subtitulo" onclick="toggleMedications('ASMA')" >Asma exacerbada</h2>
         <div id="medicacoesASMA" class="medicacao">
-            <p>Broncodilatador:</p>
+            <p class="titulo">Broncodilatador:</p>
             <p>1 - <strong>Salbutamol Spray 100 mcg/jato</strong>: <strong><span id="doseSalbutamolSpray">0</span></strong> jatos a cada 20 minutos por 1 hora (dose máxima: 10 jatos) (1 ciclo) </p>
             <p>2 - <strong>Salbutamol solução para nebulização (0,25 mg/gota)</strong>: dar <strong><span id="doseSalbutamolSolucao">0</span></strong> gotas (0,1 mg/kg) a cada 20 minutos por 1 hora (dose máxima: 20 gotas) (1 ciclo = 3 doses = 1h) </p>
             <p>3 - <strong>Terbutalina (0,5 mg/ml)</strong>: Diluir <strong><span id="doseTerbutalina">0</span></strong> ml em <strong><span id="solventeTerbutalina">0</span></strong> ml de SF 0,9%, correr EV em 5 min (dose: 5 mcg/kg / dose máxima: 10 mcg/kg)</p>
             <br>
-            <p>Anticolinérgico:</p>
+            <p class="titulo">Anticolinérgico:</p>
             <p>1 - <strong>Brometo de ipatrópio</strong>: <strong><span id="doseBrometoIpatropio">0</span></strong> gotas a cada 20 minutos por até 3x (1 ciclo) </p>
             <br>
-            <p>Corticoterapia:</p>
+            <p class="titulo">Corticoterapia:</p>
             <p>1 - <strong>Hidrocortisona 100mg ou 500mg</strong>: Aplicar <strong><span id="doseHidrocortisona">0</span></strong> mg IM de 6/6h (5 mg/kg), ou diluir em <strong><span id="solventeHidrocortisona">0</span></strong> ml de SF 0,9% (2 mg/ml), correr EV em 30 min de 6/6h por 3 a 5 dias (máximo 250 mg/dose)</p>
             <p>2 - <strong>Prednisolona</strong>: Administrar <strong><span id="dosePrednisolonaSuspOral2">0</span></strong> ml ou <strong><span id="dosePrednisolonaGotas2">0</span></strong> gotas VO de 1x ao dia por 3 a 5 dias (1mg/kg/dia / dose máx: 60mg/dia)</p>
             <p>3 - <strong>Dexametasona (2 mg/ml)</strong>: administrar <strong><span id="doseDexametasona2">0</span></strong> ml IM dose única (0,6 mg/kg / dose máx: 10mg)</p>
-            <p>3 - <strong>Dexametasona (4 mg/ml)</strong>: administrar <strong><span id="doseDexametasona4">0</span></strong> ml IM dose única (0,6 mg/kg / dose máx: 10mg)</p>
+            <p>4 - <strong>Dexametasona (4 mg/ml)</strong>: administrar <strong><span id="doseDexametasona4">0</span></strong> ml IM dose única (0,6 mg/kg / dose máx: 10mg)</p>
             <br>
-            <p>Sulfato de Magnésio (50 mg/kg)</p>
+            <p class="titulo">Sulfato de Magnésio (50 mg/kg)</p>
             <p>1 - <strong>Sulfato de Mg 50% (500 mg/ml)</strong>: administrar <strong><span id="doseSulfatoMg50">0</span></strong> ml diluido em 50 ml de SF 0,9% em 30 min (50 mg/kg / dose máx: 2g)</p>
             <p>2 - <strong>Sulfato de Mg 10% (100 mg/ml)</strong>: administrar <strong><span id="doseSulfatoMg10">0</span></strong> ml diluido em 50 ml de SF 0,9% em 30 min (50 mg/kg / dose máx: 2g)</p>
         </div>
@@ -285,11 +299,11 @@
         <br><h4>Emergências cardiovasculares</h4>
         <h2 class="subtitulo" onclick="toggleMedications('Taquiarritmias')" >Taquiarritmias</h2>
         <div id="medicacoesTaquiarritmias" class="medicacao">
-            <p>Taquicardia supraventricular estável (QRS estreito):</p>
+            <p class="titulo">Taquicardia supraventricular estável (QRS estreito):</p>
             <p>1 - Manobra de valsalva modificada</p>
             <p>2 - <strong>Adenosina (3 mg/ml em 2 ml)</strong>: Administrar <strong><span id="doseAdenosina">0</span></strong> ml EV com torneira 3 vias seguido de 10 ml de SF 0,9%, se não melhorar, administrar <strong><span id="doseAdenosina2">0</span></strong> ml</p>
             <br>
-            <p>Taquicardia ventricular estável (QRS largo):</p>
+            <p class="titulo">Taquicardia ventricular estável (QRS largo):</p>
             <p>1 - <strong>Amiodarona (50 mg/ml em 3 ml) dose de ataque</strong>: Diluir <strong><span id="doseAmiodaronaAtaque">0</span></strong> ml em <strong><span id="diluenteAmiodaronaAtaque">0</span></strong> ml de SG5%, correr EV em 60 minutos (pode fazer mais duas vezes caso não funcione)</p>
             <p>2 - <strong>Amiodarona (50 mg/ml em 3 ml) dose de manutenção</strong>: Diluir <strong><span id="doseAmiodaronaManutencao">0</span></strong> ml em <strong><span id="diluenteAmiodaronaManutencao">0</span></strong> ml de SG5%, correr EV em BIC a <strong><span id="vazaoAmiodaronaManutencao"></span></strong> ml/h</p><br>
             <p>Taquiarritmia instável (supra ou ventricular)</p>
@@ -310,7 +324,7 @@
         <br><h4>Emergências gastrointestinais</h4>
         <h2 class="subtitulo" onclick="toggleMedications('GECA')" >GECA</h2>
         <div id="medicacoesGECA" class="medicacao">
-            <p>Pacientes com desidratação grave</p>
+            <p class="titulo">Pacientes com desidratação grave:</p>
             <p>1 - <strong>Expansão volêmica</strong>: Ringer lactato <strong><span id="doseExpansaoCristaloide">0</span></strong> ml EV em 20 minutos, repetir até  melhora da desidratação.</p>
             <p>2 - <strong>Hidratação de manutenção</strong> EV em BIC:</p>
             <p>- SG5% &nbsp;---------------------&nbsp; 500 ml</p>
@@ -318,12 +332,12 @@
             <p>- KCl 19,2% &nbsp;---------------&nbsp;&nbsp;&nbsp; 5 ml</p>
             <p>Vazão: <strong><span id="vazaoHVManutencao">0</span></strong> ml/h contínuo 24h.</p>
             <br>
-            <p>Antibióticoterapia: (< 3 meses: cef | < 30 kg: azi ou cef | > 30 kg cipro ou cef)</p>
+            <p class="titulo">Antibióticoterapia: (< 3 meses: cef | < 30 kg: azi ou cef | > 30 kg cipro ou cef)</p>
             <p>1 - <strong>Ceftriaxona (500mg ou 1g)</strong>: Administrar <strong><span id="doseCeftriaxonaGeca">0</span></strong> a <strong><span id="doseCeftriaxonaGeca2">0</span></strong> mg IM ou EV (diluido com <strong><span id="diluenteCeftriaxonaGeca">0</span></strong> ml de SF 0,9% em 30 minutos) 1x ao dia por 3 a 5 dias. (50 - 100 mg/kg/dia)</p>
             <p>2 - <strong>Azitromicina (40 mg/ml)</strong>: Dar <strong><span id="doseAzitromicinaGeca">0</span></strong> ml VO no 1º dia, depois <strong><span id="doseAzitromicinaGeca2">0</span></strong> ml 1x ao dia por 4 dias. (< 30 Kg)</p>
             <p>3 - <strong>Ciprofloxacino 500mg</strong>: dar 1 comprimido VO de 12/12h por 3 dias. (> 30 Kg)</p>
             <br>
-            <p>Antieméticos:</p>
+            <p class="titulo">Antieméticos:</p>
             <p>1 - <strong>Ondansetrona (2 mg/ml)</strong>: administrar <strong><span id="doseOndansetronaGeca">0</span></strong> mg IM ou EV (diluido em 50 ml de SG5% em 15 minutos) de 8/8h. (> 6 meses)</p>
             <p>2 - <strong>Dramin B6 DL &reg; (3 mg/ml)</strong>: administrar <strong><span id="doseDraminB6DLEV">0</span></strong> ml EV diluido em 10 ml de AD em 2 minutos de 6/6h. (> 2 anos) (dose máx: 300mg/dia)</p>
             <p>2 - <strong>Dramin B6 &reg; (50 mg/ml)</strong>: administrar <strong><span id="doseDraminB6IM">0</span></strong> ml IM puro de 8/8h. (> 2 anos)</p>
