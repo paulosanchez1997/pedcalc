@@ -15,15 +15,33 @@
         h4{
             padding-left: 1%;
             color: #151515;
+            text-align: left;
         }
         .medicacao {
             display: none; /* Esconder as medicações inicialmente */
+            margin-left: 3%;
         }
         .subtitulo {
             cursor: pointer;
-            background-color: #F4F3F6;
+            background-color: #3C4FFD;
             padding-top: 1%;
             padding-bottom: 1%;
+            padding-right: 2%;
+            padding-left: 4%;
+            font-size: 1em;
+            border-width: 0px;
+            border-bottom-width: 1px;
+            border-top-width: 1px;
+            border-color: #949494;
+            color: white;
+            border-radius: 15px;
+            font-weight: 300;
+        }
+        .subtitulo2 {
+            cursor: pointer;
+            background-color: #DFEFF9;
+            padding-top: 0.5%;
+            padding-bottom: 0.5%;
             padding-right: 2%;
             padding-left: 2%;
             font-size: 1.1em;
@@ -38,11 +56,12 @@
             font-size: 1.1em;
         }
         #cabecalho {
-            background-color: #F4F3F6;
-            padding-top: 2%;
+            background-color: white;
+            padding-top: 5%;
             padding-bottom: 2%;
             padding-left: 5%;
             padding-right: 5%;
+            color: white;
         }
         #corpo {
             padding-right: 3%;
@@ -64,11 +83,39 @@
             color: #424242;
         }
         input{
-            margin-bottom: 1%;
-            width: 50px;
+            margin-bottom: 0px;
+            width: 10%;
+            margin-left: 40%;
+            margin-right: 40%;
+            height: 30px;
+            border-style: solid;
+            border-color: #2C2E2F;
+            border-width: 1px;
+            color: #2C2E2F;
+            padding-left: 3%;
+            border-radius: 15px;
+            display: block;
         }
-        #peso{
-            width:90px;
+        select{
+            color: #86888C;
+            margin-top: 1%;
+            margin-left: 40%;
+            height: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: white;
+            padding-left: 3%;
+        }
+        #calcular{
+            background-color: #3C4FFD;
+            color: white;
+            width: 13.5%;
+            margin-left: 40%;
+            margin-right: 30%;
+            height: 40px;
+            border-style: none;
+            border-radius: 15px;
+            margin-top: 1%;
         }
         button{
             width: 175px;
@@ -85,19 +132,29 @@
           body{
             font-size: 2em;
           }
+          #cabecalho{
+            padding-top: 20%;
+          }
+          #calcular{
+            width: 74%;
+            padding-left: 0px;
+            margin-left: 15%;
+            height: 50px;
+          }
           input{
-            height: 40px;
+            height: 50px;
             margin-bottom: 3%;
             border-radius: 10px;
-            width: 100px;
-          }
-          #peso{
-            width: 100px;
+            width: 70%;
+            margin-left: 15%;
+            margin-right: 15%;
+            font-size: 1.1em;
           }
           select{
-            height: 45px;
-            width: 20%;
+            height: 50px;
             font-size: 0.8em;
+            margin-left: 15%;
+            margin-bottom: 3%;
           }
           button{
             height: 40px;
@@ -109,13 +166,14 @@
             margin-bottom: 5%;
           }
           .subtitulo{
-            padding-top: 3%;
-            padding-bottom: 3%;
+            padding-top: 4%;
+            padding-bottom: 4%;
           }
         }
         @media (max-width: 426px) {
             body{
-                font-size: 1.2em;
+                font-size: 1.3em;
+                text-align: left;
             }
             button{
                 width: 50%;
@@ -123,11 +181,11 @@
             select{
                 width: 30%;
             }
-            #peso{
-                width: 55%;
-            }
             .titulo{
-                font-size: 1.4em;
+                font-size: 1.1em;
+            }
+            p{
+                font-size: 0.8em;
             }
         }
     </style>
@@ -135,16 +193,13 @@
 <body>
 
     <div id="cabecalho">
-        <h1>Calculadora Pediátrica</h1>
-        <label for="peso">Peso (kg):</label>
-        <input type="number" id="peso" name="peso" inputmode="numeric"> <br>
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" inputmode="numeric">
+        <input type="number" id="peso" name="peso" inputmode="numeric" placeholder="Peso (Kg)"> <br>
+        <input type="number" id="idade" name="idade" inputmode="numeric" placeholder="Idade">
         <select id="unidadeIdade">
             <option value="anos">Anos</option>
             <option value="meses">Meses</option>
         </select><br>
-        <button onclick="calcularDoses()">Calcular</button>
+        <button onclick="calcularDoses()" id="calcular">Calcular</button>
     </div>
 
     <div id="corpo">
@@ -324,16 +379,49 @@
         <br><h4>Emergências gastrointestinais</h4>
         <h2 class="subtitulo" onclick="toggleMedications('GECA')" >GECA</h2>
         <div id="medicacoesGECA" class="medicacao">
+            <h2 class="subtitulo2" onclick="toggleMedications('ExamesGeca')" >Exames complementares</h2>
+            <div id="medicacoesExamesGeca" class="medicacao">
+                <p>Para quem pedir: < 3 meses, portadores de doenças crônicas, desnutridos, com quadros graves e/ou prolongados, devem ser considerados exames para identificação etiológica.</p>
+                <p>- Hemograma</p>
+                <p>- Eletrólitos com cálcio iônico</p>
+                <p>- Glicemia</p>
+                <p>- Gasometria venosa</p>
+                <p>- Função renal</p>
+                <p>- TGO/TGP</p>
+                <p>- EPF</p>
+                <p>- Baixos níveis de bicarbonato sérico (< 15 mEq/L) e elevados níveis de ureia (> 60 mg/dL) têm um bom valor preditivo positivo para desidratação moderada a grave.</p>
+                <p>- Em crianças que serão submetidas à hidratação intravenosa de manutenção, está indicada coleta de eletrólitos após 6 a 12 horas.</p>
+                <p>- Coprocultura: particularmente útil nos pacientes com sinais de infecção bacteriana (diarreia com sangue, dor abdominal, sinais de sepse), para isolamento de possível agente etiológico e direcionamento da terapêutica antimicrobiana.</p>
+                <p>- Teste rápido para pesquisa viral nas fezes (p. ex., rotavírus e adenovírus): quando há necessidade de conhecer agente etiológico específico, como, por exemplo, em surtos em hospitais, berçários e escolas.</p>
+                <p>- Teste para C. difficile (pesquisa de toxina A e B ou PCR): uso recente de antimicrobianos (8 a 12 semanas antes do início da diarreia) ou em indivíduos com diarreia associada aos cuidados em saúde.</p>
+                <p>- Hemocultura: deve ser considerada na presença de sinais de sepse, em lactentes < 3 meses, imunocomprometidos e portadores de anemia hemolítica.</p>
+            </div>
+            <h2 class="subtitulo2" onclick="toggleMedications('CriteriosInternacaoGeca')" >Critérios de internação</h2>
+            <div id="medicacoesCriteriosInternacaoGeca" class="medicacao">
+                <p>- Choque hipovolêmico</p>
+                <p>- Desidratação grave (>10% de peso)</p>
+                <p>- Manifestações neurológicas (letargia, convulsões)</p>
+                <p>- Vômitos biliosos ou de difícil controle</p>
+                <p>- Falha na terapia de reidratação oral</p>
+                <p>- Suspeita de doença cirúrgica associada</p>
+                <p>- Falha de condições satisfatórias para tratamento domicilar ou acompanhamento ambulatorial</p>
+            </div>
+            <p class="titulo">Pacientes sem desidratação</p>
+            <p>1 - Manter alimentação habitual.</p>
+            <p>2 - <strong>Sais de reidratação oral</strong>: diluir 1 sachê em 1L de água filtrada, ofertar de acordo com aceitação após cada episódio diarreico.</p>
+            <p>3 - <strong>Unizinco (4 mg/ml)</strong>: dar <strong><span id="doseZincoGeca">0</span></strong> ml VO 1x ao dia por 10 - 14 dias. (< 5 anos)</p>
+            <p>4 - <strong>Racecadotrila granulado <span id="racecadotrilaMg">0</span> mg</strong>: Diluir <strong><span id="doseRacecadotrila">0</span></strong> sachê em água filtrada e ofertar 3x ao dia enquanto diarreia persistir. (> 3 meses)</p>
             <p class="titulo">Pacientes com desidratação grave:</p>
             <p>1 - <strong>Expansão volêmica</strong>: Ringer lactato <strong><span id="doseExpansaoCristaloide">0</span></strong> ml EV em 20 minutos, repetir até  melhora da desidratação.</p>
             <p>2 - <strong>Hidratação de manutenção</strong> EV em BIC:</p>
             <p>- SG5% &nbsp;---------------------&nbsp; 500 ml</p>
             <p>- NaCl 20% &nbsp;----------------&nbsp;&nbsp; 20 ml</p>
             <p>- KCl 19,2% &nbsp;---------------&nbsp;&nbsp;&nbsp; 5 ml</p>
-            <p>Vazão: <strong><span id="vazaoHVManutencao">0</span></strong> ml/h contínuo 24h.</p>
+            <p>Vazão: <strong><span id="vazaoHVManutencao">0</span></strong> ml/h ou <strong><span id="macrogotasHvManuGeca">0</span></strong> macrogotas/min contínuo 24h.</p>
             <br>
-            <p class="titulo">Antibióticoterapia: (< 3 meses: cef | < 30 kg: azi ou cef | > 30 kg cipro ou cef)</p>
-            <p>1 - <strong>Ceftriaxona (500mg ou 1g)</strong>: Administrar <strong><span id="doseCeftriaxonaGeca">0</span></strong> a <strong><span id="doseCeftriaxonaGeca2">0</span></strong> mg IM ou EV (diluido com <strong><span id="diluenteCeftriaxonaGeca">0</span></strong> ml de SF 0,9% em 30 minutos) 1x ao dia por 3 a 5 dias. (50 - 100 mg/kg/dia)</p>
+            <p class="titulo">Antibióticoterapia:</p>
+            <p>(< 3 meses: cef | < 30 kg: azi ou cef | > 30 kg cipro ou cef)</p>
+            <p>1 - <strong>Ceftriaxona (500mg ou 1g)</strong>: Administrar <strong><span id="doseCeftriaxonaGeca">0</span></strong> a <strong><span id="doseCeftriaxonaGeca2">0</span></strong> mg IM ou EV (diluido com <strong><span id="diluenteCeftriaxonaGeca">0</span></strong> a <strong><span id="diluenteCeftriaxonaGeca2">0</span></strong> ml de SF 0,9% em 30 minutos) 1x ao dia por 3 a 5 dias. (50 - 100 mg/kg/dia)</p>
             <p>2 - <strong>Azitromicina (40 mg/ml)</strong>: Dar <strong><span id="doseAzitromicinaGeca">0</span></strong> ml VO no 1º dia, depois <strong><span id="doseAzitromicinaGeca2">0</span></strong> ml 1x ao dia por 4 dias. (< 30 Kg)</p>
             <p>3 - <strong>Ciprofloxacino 500mg</strong>: dar 1 comprimido VO de 12/12h por 3 dias. (> 30 Kg)</p>
             <br>
@@ -630,6 +718,34 @@
             const doseCardioversao2 = peso * 2;
 
             //Doses GECA ----------------------------------------------------------------------------GECA---------------------------------------------------------------------------
+            let doseZincoGeca;
+            if (idadeEmAnos<0.5){
+                doseZincoGeca = 2.5;
+            } else if (idadeEmAnos >= 0.5 && idadeEmAnos <= 5){
+                doseZincoGeca = 5;
+            } else if (idadeEmAnos >= 6){
+                doseZincoGeca = 0;
+            }
+            let racecadotrilaMg;
+            if (peso < 13){
+                racecadotrilaMg = 10;
+            } else {
+                racecadotrilaMg = 30;
+            }
+            let doseRacecadotrila;
+            if (peso < 9){
+                doseRacecadotrila = 1;
+            } else if (peso >= 9 && peso < 13){
+                doseRacecadotrila = 2;
+            } else if (peso >= 13 && peso < 27){
+                doseRacecadotrila = 1;
+            } else if (peso >= 27){
+                doseRacecadotrila = 2;
+            }
+            if (idadeEmAnos < 0.25){
+                doseRacecadotrila = 0;
+            }
+
             const doseExpansaoCristaloide = peso * 20;                                     //EXPANSÃO VOLÊMICA
             let vazaoHVManutencao;
             if (peso < 10){                                                                //HV MANUTENÇÃO
@@ -639,9 +755,11 @@
             } else{
                 vazaoHVManutencao = 60 + (peso-20)
             }
+            const macrogotasHvManuGeca = vazaoHVManutencao/3;
             const doseCeftriaxonaGeca = peso * 50;                                         //ATB
             const doseCeftriaxonaGeca2 = peso * 100;
-            const diluenteCeftriaxonaGeca = doseCeftriaxonaGeca2 / 10;
+            const diluenteCeftriaxonaGeca = doseCeftriaxonaGeca / 10;
+            const diluenteCeftriaxonaGeca2 = doseCeftriaxonaGeca2 / 10;
             const doseAzitromicinaGeca = peso * 0.25;
             const doseAzitromicinaGeca2 = peso * 0.125;
 
@@ -809,11 +927,17 @@
             document.getElementById("vazaoMorfinaBIC").textContent = vazaoMorfinaBIC.toFixed(1);
 
             //Atualizando os elementos da GECA
+            document.getElementById("doseZincoGeca").textContent = doseZincoGeca;
+            document.getElementById("racecadotrilaMg").textContent = racecadotrilaMg;
+            document.getElementById("doseRacecadotrila").textContent = doseRacecadotrila;
+
             document.getElementById("doseExpansaoCristaloide").textContent = doseExpansaoCristaloide.toFixed(1);
             document.getElementById("vazaoHVManutencao").textContent = vazaoHVManutencao.toFixed(1);
+            document.getElementById("macrogotasHvManuGeca").textContent = Math.floor(macrogotasHvManuGeca);
             document.getElementById("doseCeftriaxonaGeca").textContent = Math.floor(doseCeftriaxonaGeca);
             document.getElementById("doseCeftriaxonaGeca2").textContent = Math.floor(doseCeftriaxonaGeca2);
             document.getElementById("diluenteCeftriaxonaGeca").textContent = Math.floor(diluenteCeftriaxonaGeca);
+            document.getElementById("diluenteCeftriaxonaGeca2").textContent = Math.floor(diluenteCeftriaxonaGeca2);
             document.getElementById("doseAzitromicinaGeca").textContent = doseAzitromicinaGeca.toFixed(1);
             document.getElementById("doseAzitromicinaGeca2").textContent = doseAzitromicinaGeca2.toFixed(1);
 
