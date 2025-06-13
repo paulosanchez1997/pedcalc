@@ -439,6 +439,57 @@
             <p>4 - <strong>Dramin &reg; solução oral (2,5 mg/ml)</strong>: dar <strong><span id="doseDraminVOSolucOral">0</span></strong> ml de 8/8h. (> 2 anos)</p>
         </div>
 
+        <br><h4>Emergências Infecciosas</h4>
+        <h2 class="subtitulo" onclick="toggleMedications('Cad')" >Dengue</h2>
+        <div id="medicacoesCad" class="medicacao">
+            <h2 class="subtitulo2" onclick="toggleMedications('SinaisDeAlarme')" >Sinais de alarme</h2>
+            <div id="medicacoesSinaisDeAlarme" class="medicacao">
+                <p>- Dor abdominal intensa</p>
+                <p>- Sangramento de mucosas</p>
+                <p>- Vômitos persistentes</p>
+                <p>- Hepatomegalia > 2 cm abaixo do rebordo costal</p>
+                <p>- Extravazamento cavitário</p>
+                <p>- Hipotensão postural</p>
+                <p>- Letargia</p>
+                <p>- Hemoconcentração</p>
+            </div>
+            <h2 class="subtitulo2" onclick="toggleMedications('ExamesComplementaresDengue')" >Exames complementares</h2>
+            <div id="medicacoesExamesComplementaresDengue" class="medicacao">
+                <p>- Grupo A: nada</p>
+                <p>- Grupo B: hemograma (ver hematócrito até 4h)</p>
+                <p>- Grupo C/D: abaixo</p>
+                <p>- Obrigatórios: hemograma, albumina, transaminases</p>
+                <p>- Recomendado: rx de tórax e USG de abdome</p>
+                <p>- COnforme necessidade: glicemia, udeia, creatifina, eletrólitos, GASO, coagulograma, ECO</p>
+                <p>- Exames específicos de dengue:</p>
+                <p>- - Proteína NS1 / PCR (até 5 dias) / Ac IgM ELISA (após 6º dia)</p>
+            </div>
+            <p class="titulo">Grupo A</p>
+            <p>1 - <strong>Antitérmico:</strong> Dipirona ou paracetamol.</p>
+            <p>2 - <strong>Hidratação oral:</strong>: Dar <strong><span id="doseSoroOralDengueA">0</span></strong> ml de soro oral, e <strong><span id="doseAguaDengueA">0</span></strong> ml de água/suco por dia, por até 2 dias após defervescência.</p>
+            <p>3 - Retornar no dia da defervescência.</p>
+            <p>4 - Não usar ibuprofeno ou outros anti-inflamatórios.</p>
+            <p class="titulo">Grupo B</p>
+            <p>1 - Hemograma em 2h, máx 4h.</p>
+            <p>2 - <strong>Com hemoconcentração:</strong> conduzir como Grupo C. (tabela na galeria)</p>
+            <p>3 - <strong>Sem hemoconcentração</strong>, hematócrito diário até 2 dias apos defervescência.</p>
+            <p class="titulo">Grupo C</p>
+            <p>1 - Internação por no mínimo 48h.</p>
+            <p>2 - <strong>Expansão volêmica:</strong> Fazer <strong><span id="doseExpansaoDengueC">0</span></strong> ml de SF 0,9% EV em 1h. Repetir até chegada do hematócrito, pode repetir até 3x (10 ml/kg)</p>
+            <p>3 - Solicitar novo hematócrito a cada 2h e sinais vitais a cada hora (diurese > 1 ml/kg/h), se não melhorar hematócrito, conduzir como D.</p>
+            <p>4 - <strong>Primeira fase e manutenção:</strong> Fazer <strong><span id="doseMenutencao1DengueC">0</span></strong> ml de SF 0,9% EV em 6h. (25 ml/kg)</p>
+            <p>5 - <strong>Segunda fase e manutenção:</strong> Fazer <strong><span id="doseMenutencao2DengueC">0</span></strong> ml de SF 0,9% EV em 8h. (25 ml/kg)</p>
+            <p class="titulo">Grupo D</p>
+            <p>1 - Solicitar leito de UTI.</p>
+            <p>2 - Hemograma a cada 2h até melhora.</p>
+            <p>3 - <strong>Expansão volêmica:</strong> Fazer <strong><span id="doseExpansaoDengueD">0</span></strong> ml de SF 0,9% EV em 20 min. Repetir até 3x. (20 ml/kg)</p>
+            <p>4 - <strong>Albumina humana 20%:</strong> Diluir <strong><span id="doseAlbuminaDengueD">0</span></strong> ml em <strong><span id="diluicaoAlbuminaDengueD">0</span></strong> ml de SF 0,9%, correr EV a <strong><span id="vazaoAlbuminaDengueD">0</span></strong> ml/h. (se hematócrito subindo, mas persistência do choque). (1 g/Kg)</p>
+            <p>5 - <strong>Concentrado de hemárias:</strong> Fazer <strong><span id="doseCHDengueD">0</span></strong> ml Ev em 1h. (Se hematócrito em queda após medidas, e foco de sangramento) (15 ml/kg)</p>
+            <p>6 - <strong>Plasma fresco congelado:</strong> Fazer <strong><span id="dosePlasmaFrescoDengueD">0</span></strong> ml Ev em 1h. (Se Fibrinogênio >100mg/dL e TAP e/ou PTTa >1,5 vezes o controle + hemorragia ativa). (10 ml/kg)</p>
+            <p>7 - <strong>Concentrado de plaquetas:</strong> Fazer <strong><span id="doseCPDengueD">0</span></strong> <strong><span id="unidadeMedidaCPDengueD">0</span></strong> de CP por <strong><span id="tempoCPDengueD">0</span></strong> min de 12/12 ou 8/8h ate resolução do sangramento. (Se PL < 50k e sangramento em locais críticos (SNC ou TGI), <20K se sangramento ativo) (1 CP para cada 10 Kg) (Se peso < 10kg, fazer 10ml/kg)</p>
+
+        </div>
+
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
@@ -811,7 +862,63 @@
                 doseDraminVOSolucOral = 53;
             }
 
+            //Doses Dengue------------------------------------------------------------------------DENGUE------------------------------------------------------------
 
+            let doseHidratacaoOralDengueA;
+            if (idadeEmAnos >= 13){
+                doseHidratacaoOralDengueA = (peso * 60);
+            }else
+            {
+                if (peso < 10){
+                    doseHidratacaoOralDengueA = peso * 130;
+                }else if (peso >= 10 && peso < 20){
+                    doseHidratacaoOralDengueA = peso * 100;
+                }else if (peso >= 20){
+                    doseHidratacaoOralDengueA = peso * 80;
+                }
+            }
+            let doseSoroOralDengueA = doseHidratacaoOralDengueA/3;
+            let doseAguaDengueA = doseSoroOralDengueA*2;
+
+            const doseExpansaoDengueC = peso * 10;
+            const doseMenutencao1DengueC = peso* 25;
+            const doseMenutencao2DengueC = peso * 25;
+
+            const doseExpansaoDengueD = peso * 20;
+            const doseAlbuminaDengueD = peso / 0.2;
+            const diluicaoAlbuminaDengueD = doseAlbuminaDengueD * 3;
+            const vazaoAlbuminaDengueD = (doseAlbuminaDengueD + diluicaoAlbuminaDengueD) / 2;
+            const doseCHDengueD = peso * 15;
+            const dosePlasmaFrescoDengueD = peso * 10;
+            let doseCPDengueD;
+            let unidadeMedidaCPDengueD;
+            let tempoCPDengueD;
+            if (peso < 10){
+                doseCPDengueD = peso * 10;
+                unidadeMedidaCPDengueD = "ml";
+                tempoCPDengueD = 30;
+            }else {
+                doseCPDengueD = peso / 10;
+                unidadeMedidaCPDengueD = "UI";
+                tempoCPDengueD = doseCPDengueD * 30;
+            }
+
+
+            //Atualizando os elementos da Dengue
+            document.getElementById("doseSoroOralDengueA").textContent = doseSoroOralDengueA.toFixed(1);
+            document.getElementById("doseAguaDengueA").textContent = doseAguaDengueA.toFixed(1);
+            document.getElementById("doseExpansaoDengueC").textContent = doseExpansaoDengueC.toFixed(1);
+            document.getElementById("doseMenutencao1DengueC").textContent = doseMenutencao1DengueC.toFixed(1);
+            document.getElementById("doseMenutencao2DengueC").textContent = doseMenutencao2DengueC.toFixed(1);
+            document.getElementById("doseExpansaoDengueD").textContent = doseExpansaoDengueD.toFixed(1);
+            document.getElementById("doseAlbuminaDengueD").textContent = doseAlbuminaDengueD.toFixed(1);
+            document.getElementById("diluicaoAlbuminaDengueD").textContent = diluicaoAlbuminaDengueD.toFixed(1);
+            document.getElementById("vazaoAlbuminaDengueD").textContent = vazaoAlbuminaDengueD.toFixed(1);
+            document.getElementById("doseCHDengueD").textContent = doseCHDengueD.toFixed(1);
+            document.getElementById("dosePlasmaFrescoDengueD").textContent = dosePlasmaFrescoDengueD.toFixed(1);
+            document.getElementById("doseCPDengueD").textContent = Math.floor(doseCPDengueD);
+            document.getElementById("tempoCPDengueD").textContent = Math.floor(tempoCPDengueD);
+            document.getElementById("unidadeMedidaCPDengueD").textContent = unidadeMedidaCPDengueD;
 
             // Atualizando os elementos das drogas vasoativas
             document.getElementById("doseNoradrenalina").textContent = doseNoradrenalina.toFixed(1);
